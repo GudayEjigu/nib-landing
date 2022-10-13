@@ -1,0 +1,13 @@
+export {default as Home} from './Home/Home'
+export {default as Blog} from './Blog/Blog'
+export {default as Detail} from './Blog/Detail'
+export {default as Services} from './Services/Services'
+export {default as ServiceDetail} from './Services/ServiceDetail'
+export {default as Contact} from './Other/Contact'
+export {default as Faq} from './Other/Faq'
+export {default as About} from './About/About'
+export {default as Vacancy} from './Vacancy/Vacancy'
+export {default as VacancyDetails} from './Vacancy/VacancyDetails'
+export {default as Publication} from './Other/Publication'
+export {default as Branches} from './Other/Branches'
+
