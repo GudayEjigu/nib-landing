@@ -1,6 +1,6 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import Logo from "../assets/logo.png";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { urlFor, client } from "../utils/client";
@@ -18,7 +18,11 @@ import { ThreeDots } from "react-loader-spinner";
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
+import LoginModal from "./Auth/LoginModal";
+import { useAuth } from "../context/auth";
 const Navbar = () => {
+  const { user, token, logout } = useAuth();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
   const { isAmh, changeLang } = useContext(LangContext);
   const headers = {
@@ -69,6 +73,13 @@ const Navbar = () => {
       onSuccess: (res) => {},
     }
   );
+  const handleLogin = () => {
+    if (!user && !token) {
+      setIsModalOpen(true);
+    } else {
+      logout();
+    }
+  };
   return (
     <>
       <header className="relative top-0">
@@ -81,17 +92,19 @@ const Navbar = () => {
             {/* links */}
             <div className="hidden lg:flex items-center space-x-4">
               <Link to="/" className="font-semibold text-gray-700">
-                {isAmh ? "ቤት" :'Home'}
+                {isAmh ? "ቤት" : "Home"}
               </Link>
               <Link to="/vacancies" className="font-semibold text-gray-700">
-              {isAmh ?'ስራዎች' : 'Vacancies'}
+                {isAmh ? "ስራዎች" : "Vacancies"}
               </Link>
               <Link to="/about" className="font-semibold text-gray-700">
-                {isAmh ? "ስለ እኛ" :"About us"}
+                {isAmh ? "ስለ እኛ" : "About us"}
               </Link>
               <div className="hidden md:flex  flex-col  items-center justify-center group">
                 <div className="flex items-center space-x-1 hover:text-[#FAD03C]">
-                  <h1 className="font-semibold text-gray-700 cursor-pointer ">{isAmh ?  "አገልግሎቶች":"services"}</h1>
+                  <h1 className="font-semibold text-gray-700 cursor-pointer">
+                    {isAmh ? "አገልግሎቶች" : "services"}
+                  </h1>
                   <BiChevronRight />
                 </div>
                 <div
@@ -130,60 +143,84 @@ const Navbar = () => {
                 </div>
               </div>
               <Link to="/blogs" className="font-semibold text-gray-700">
-              {isAmh ? 'ብሎጎች' :'Blogs' }
+                {isAmh ? "ብሎጎች" : "Blogs"}
               </Link>
               <Link to="/publication" className="font-semibold text-gray-700">
-                {isAmh ?  "ህትመት" :'Publication'}
+                {isAmh ? "ህትመት" : "Publication"}
               </Link>
               <Link to="/branches" className="font-semibold text-gray-700">
-                {isAmh ? "ቅርንጫፎች" :"Branches"}
+                {isAmh ? "ቅርንጫፎች" : "Branches"}
               </Link>
               <Link to="/faq" className="font-semibold text-gray-700">
-                {isAmh ?  "ፋክስ":'Faqs'}
+                {isAmh ? "ፋክስ" : "Faqs"}
               </Link>
+
+              <p onClick={handleLogin} className="font-semibold text-gray-700  cursor-pointer">
+                {!user && !token
+                  ? isAmh
+                    ? "ግባ"
+                    : "Login"
+                  : isAmh
+                  ? "ውጣ"
+                  : "Logout"}
+              </p>
             </div>
             <div className="flex space-x-2 items-center pr-2">
-            <Menu
-                  menuButton={
-                    <MenuButton>
-                      <AiFillSetting
-                        size={20}
-                        className="text-slate-800 cursor-pointer"
-                      />
-                    </MenuButton>
-                  }
-                  transition
-                >
-                  <MenuItem disabled>{isAmh ? "Language" : "ቋንቋ"}</MenuItem>
-                  <MenuItem>
-                    <div
-                      className="flex items-center space-x-1 cursor-pointer pb-1"
-                      onClick={() => {
-                        changeLang(false);
-                      }}
-                    >
-                      <TiInputChecked
-                        size={20}
-                        className={!isAmh ? "text-blue-500" : "text-gray-200"}
-                      />
-                      <h1 className="font-semibold ">English</h1>
-                    </div>
-                  </MenuItem>
-                  <MenuItem>
-                    <div
-                      className="flex items-center space-x-1 cursor-pointer"
-                      onClick={() => {
-                        changeLang(true);
-                      }}
-                    >
-                      <TiInputChecked
-                        size={20}
-                        className={isAmh ? "text-blue-500" : "text-gray-200"}
-                      />
-                      <h1 className="font-semibold">አማርኛ</h1>
-                    </div>
-                  </MenuItem>
-                </Menu>
+              <Menu
+                menuButton={
+                  <MenuButton>
+                    <AiFillSetting
+                      size={20}
+                      className="text-slate-800 cursor-pointer"
+                    />
+                  </MenuButton>
+                }
+                transition
+              >
+                <MenuItem disabled>{isAmh ? "Language" : "ቋንቋ"}</MenuItem>
+                <MenuItem>
+                  <div
+                    className="flex items-center space-x-1 cursor-pointer pb-1"
+                    onClick={() => {
+                      changeLang(false);
+                    }}
+                  >
+                    <TiInputChecked
+                      size={20}
+                      className={!isAmh ? "text-blue-500" : "text-gray-200"}
+                    />
+                    <h1 className="font-semibold ">English</h1>
+                  </div>
+                </MenuItem>
+                <MenuItem>
+                  <div
+                    className="flex items-center space-x-1 cursor-pointer"
+                    onClick={() => {
+                      changeLang(true);
+                    }}
+                  >
+                    <TiInputChecked
+                      size={20}
+                      className={isAmh ? "text-blue-500" : "text-gray-200"}
+                    />
+                    <h1 className="font-semibold">አማርኛ</h1>
+                  </div>
+                </MenuItem>
+                {(user && token ) && <MenuItem>
+                  <div
+                    className="flex items-center space-x-1 cursor-pointer"
+                    onClick={() => {
+                      navigate('/profile')
+                    }}
+                  >
+                    <FaUser
+                      size={14}
+                      className={isAmh ? "text-blue-500" : "text-gray-200"}
+                    />
+                    <h1 className="font-semibold">Profile</h1>
+                  </div>
+                </MenuItem>}
+              </Menu>
 
               <button
                 onClick={() => navigate("/contact")}
@@ -196,7 +233,11 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-      <DropDown isOpen={isOpen} toggle={toggle} />
+      <LoginModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      <DropDown isOpen={isOpen} 
+      toggle={toggle} 
+      setIsModalOpen={setIsModalOpen}
+      setIsOpen={setIsOpen}/>
     </>
   );
 };

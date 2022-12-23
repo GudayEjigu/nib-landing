@@ -78,10 +78,10 @@ const Detail = () => {
                   {blogDetailData?.data?.data?.data?.Detail?.published_date}
                 </Moment>
               </div>
-              <h1 className="font-semibold text-sm line-clamp-2">
-                        {isAmh ? blogDetailData?.data?.data?.data?.Detail?.title?.amhric : blogDetailData?.data?.data?.data?.Detail?.title?.english}
+              <h1 className="font-semibold text-2xl py-2 line-clamp-2">
+                        {isAmh ? blogDetailData?.data?.data?.data?.Detail?.title?.amharic : blogDetailData?.data?.data?.data?.Detail?.title?.english}
                         </h1>
-              <p className="text-sm">{isAmh ? blogDetailData?.data?.data?.data?.Detail?.body?.amhric : blogDetailData?.data?.data?.data?.Detail?.body?.english}</p>
+              <p className="text-sm">{isAmh ? blogDetailData?.data?.data?.data?.Detail?.body?.amharic : blogDetailData?.data?.data?.data?.Detail?.body?.english}</p>
             </div>
           ) : (
             <div className="flex items-center justify-center w-full py-10">
@@ -150,8 +150,9 @@ const Detail = () => {
                           </Moment>
                         </div>
                         <h1 className="font-semibold text-sm line-clamp-2">
-                        {isAmh ? item.title?.amhric : item.title?.english}
+                        {isAmh ? item.title?.amharic : item.title?.english}
                         </h1>
+                        <p className="text-sm line-clamp-2">{isAmh ? item.body?.amharic : item.body?.english}</p>
                         <div></div>
                       </div>
                     </div>

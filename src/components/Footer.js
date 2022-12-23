@@ -94,13 +94,7 @@ const Footer = () => {
                 {isAmh ?  "ፋክስ":'Faqs'}
               </Link>
                 </div>
-                <div>
-                  <p className="font-light">OUR TEAM</p>
-                  <p className="font-light">LATEST NEWS</p>
-                  <p className="font-light">LATEST NEWS</p>
-                  <p className="font-light">TERMS & CONDITIONS</p>
-                  <p className="font-light">CONTACT US</p>
-                </div>
+              
               </div>
             </div>
             {/* contact */}

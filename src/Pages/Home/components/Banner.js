@@ -6,8 +6,10 @@ import { Carousel } from "react-responsive-carousel";
 import bodyone from '../../../assets/bodyone.png'
 import bodytwo from '../../../assets/bodytwo.png'
 import { LangContext } from "../../../context/LangContext";
+import { useNavigate } from 'react-router-dom';
 const Banner = () => {
   const {isAmh} =useContext(LangContext);
+  const navigate = useNavigate()
   return (
     <div className="relative ">
       <div className='absolute left-0 top-0 bottom-0 h-full z-10'>
@@ -64,7 +66,8 @@ const Banner = () => {
           ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </p>
-        <button className="bg-[#ac7729] p-2 px-5 text-white rounded-sm font-medium w-fit">
+        <button onClick={()=>navigate('/contact')} 
+        className="bg-[#ac7729] p-2 px-5 text-white rounded-sm font-medium w-fit">
           {isAmh ? 'አግኙን' :'Contact us'}
         </button>
       </div>

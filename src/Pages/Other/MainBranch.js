@@ -92,7 +92,7 @@ const MainBranch = () => {
             getRowId={(row) => row.id}
             checkboxSelection={false}
             disableSelectionOnClick
-            experimentalFeatures={{ newEditingApi: true }}
+            // experimentalFeatures={{ newEditingApi: true }}
           />
         </div>
       ) : (

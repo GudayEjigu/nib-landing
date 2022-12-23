@@ -6,7 +6,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { Spinner } from "@chakra-ui/react";
 import bodyone from "../../assets/bodyone.png";
 import bodytwo from "../../assets/bodytwo.png";
-import faq from "../../assets/faq.png";
+import car from "../../assets/car.png";
 import two from "../../assets/five.png";
 import { useLang } from "../../context/lang";
 import { ThreeDots } from "react-loader-spinner";
@@ -47,7 +47,45 @@ const Branches = () => {
 
       <div>
       <div className="max-w-6xl mx-auto w-full  px-2 py-10 md:py-20  sm:px-0">
-      <Tab.Group>
+        <div className="grid grid-col-1 md:grid-cols-3 gap-3">
+          <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
+            <img src={car} className="h-20" alt="" />
+            <h1 className="font-bold text-xl text-gray-800">Arat kilo branch</h1>
+            <p className="font-medium text-gray-500">Phone: +251 11-126 43 75</p>
+            <p className="font-medium text-gray-500">Fax: +251 11-126 42 83</p>
+          </div>
+          <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
+            <img src={car} className="h-20" alt="" />
+            <h1 className="font-bold text-xl text-gray-800">Arat kilo branch</h1>
+            <p className="font-medium text-gray-500">Phone: +251 11-126 43 75</p>
+            <p className="font-medium text-gray-500">Fax: +251 11-126 42 83</p>
+          </div>
+          <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
+            <img src={car} className="h-20" alt="" />
+            <h1 className="font-bold text-xl text-gray-800">Arat kilo branch</h1>
+            <p className="font-medium text-gray-500">Phone: +251 11-126 43 75</p>
+            <p className="font-medium text-gray-500">Fax: +251 11-126 42 83</p>
+          </div>
+          <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
+            <img src={car} className="h-20" alt="" />
+            <h1 className="font-bold text-xl text-gray-800">Arat kilo branch</h1>
+            <p className="font-medium text-gray-500">Phone: +251 11-126 43 75</p>
+            <p className="font-medium text-gray-500">Fax: +251 11-126 42 83</p>
+          </div>
+          <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
+            <img src={car} className="h-20" alt="" />
+            <h1 className="font-bold text-xl text-gray-800">Arat kilo branch</h1>
+            <p className="font-medium text-gray-500">Phone: +251 11-126 43 75</p>
+            <p className="font-medium text-gray-500">Fax: +251 11-126 42 83</p>
+          </div>
+          <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
+            <img src={car} className="h-20" alt="" />
+            <h1 className="font-bold text-xl text-gray-800">Arat kilo branch</h1>
+            <p className="font-medium text-gray-500">Phone: +251 11-126 43 75</p>
+            <p className="font-medium text-gray-500">Fax: +251 11-126 42 83</p>
+          </div>
+        </div>
+      {/* <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl  p-1">
           {categories.map((category) => (
             <Tab
@@ -71,7 +109,7 @@ const Branches = () => {
         <Tab.Panel><AddisAbeba /></Tab.Panel>
         <Tab.Panel><OutlyingBranches /></Tab.Panel>
       </Tab.Panels>
-      </Tab.Group>
+      </Tab.Group> */}
     </div>
       </div>
     </div>

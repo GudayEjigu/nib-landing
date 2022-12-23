@@ -16,19 +16,24 @@ import { ThreeDots } from "react-loader-spinner";
 const Blog = () => {
   const navigate = useNavigate();
   const [categoryId, setCategoryId] = useState(null);
-const [page, setPage] = useState(1)
-const { isAmh } = useContext(LangContext);
+  const [page, setPage] = useState(1);
+  const { isAmh } = useContext(LangContext);
   const headers = {
     "Content-Type": "application/json",
     Accept: "application/json",
     // Authorization: `Bearer ${token}`,
   };
   const blogData = useQuery(
-    ["blogDataApi",categoryId,page],
+    ["blogDataApi", categoryId, page],
     async () =>
-      await axios.get(categoryId ? `${process.env.REACT_APP_BACKEND_URL}home/blogs/all?page=${page}` : `${process.env.REACT_APP_BACKEND_URL}home/blogs/all`, {
-        headers,
-      }),
+      await axios.get(
+        categoryId
+          ? `${process.env.REACT_APP_BACKEND_URL}home/blogs/all?page=${page}`
+          : `${process.env.REACT_APP_BACKEND_URL}home/blogs/all`,
+        {
+          headers,
+        }
+      ),
     {
       keepPreviousData: false,
       refetchOnWindowFocus: false,
@@ -55,7 +60,7 @@ const { isAmh } = useContext(LangContext);
       onSuccess: (res) => {},
     }
   );
-console.log(categoryId)
+  console.log(categoryId);
   return (
     <div className="">
       <div
@@ -72,9 +77,11 @@ console.log(categoryId)
         <div className="absolute inset-0 bg-black/40" />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
           <h1 className="text-white text-center font-bold text-2xl py-5 md:text-4xl">
-          {isAmh ? 'ብሎጎች' :'Blogs' }
+            {isAmh ? "ብሎጎች" : "Blogs"}
           </h1>
-          <p className="text-sm font-light text-white">{isAmh ? 'ቤት/ብሎጎች' :'HOME/BLOG'}</p>
+          <p className="text-sm font-light text-white">
+            {isAmh ? "ቤት/ብሎጎች" : "HOME/BLOG"}
+          </p>
         </div>
       </div>
       <div className="relative">
@@ -84,24 +91,29 @@ console.log(categoryId)
         <div className="absolute right-0 top-0 bottom-0 h-full z-40">
           <img src={bodytwo} alt="" className="h-full object-contain" />
         </div> */}
-        {blogCategoryData.isFetched &&   <div className="max-w-6xl mx-auto p-3">
-              <div className="flex flex-col items-start space-y-2 pt-5">
-                <h1 className="font-medium">{isAmh ? "በምድብ አጣራ" : "Filter By Category"}</h1>
-                <select
-                onChange={(e)=>setCategoryId(e.target.value)}
-                  name=""
-                  id=""
-                  className="max-w-sm w-full border-2 border-gray-400 p-2 rounded-md"
-                >
-                  {blogCategoryData?.data?.data?.data?.map((item) => (
-                    <option value={item.id}>{isAmh ? item.name.amharic : item.name.english}</option>
-                  ))}
-                </select>
-              </div>
-            </div>}
+        {blogCategoryData.isFetched && (
+          <div className="max-w-6xl mx-auto p-3">
+            <div className="flex flex-col items-start space-y-2 pt-5">
+              <h1 className="font-medium">
+                {isAmh ? "በምድብ አጣራ" : "Filter By Category"}
+              </h1>
+              <select
+                onChange={(e) => setCategoryId(e.target.value)}
+                name=""
+                id=""
+                className="max-w-sm w-full border-2 border-gray-400 p-2 rounded-md"
+              >
+                {blogCategoryData?.data?.data?.data?.map((item) => (
+                  <option value={item.id}>
+                    {isAmh ? item.name.amharic : item.name.english}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        )}
         {blogData.isFetched ? (
           <div>
-          
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 py-10">
               {blogData?.data?.data?.data?.data?.map((item) => (
                 <div className="flex flex-col items-start space-y-3">
@@ -126,15 +138,16 @@ console.log(categoryId)
                       {isAmh ? item.title.amharic : item.title.english}
                     </h1>
                     <p className="text-sm line-clamp-2">
-                      {isAmh ? item.body.amhric : item.body.english}
+                      {isAmh ? item.body.amharic : item.body.english}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
             <div className="flex items-center justify-between">
-            {blogData?.data?.data?.data?.prev_page_url !== null && (
-                <button onClick={()=>setPage((prev)=>prev - 1)}
+              {blogData?.data?.data?.data?.prev_page_url !== null && (
+                <button
+                  onClick={() => setPage((prev) => prev - 1)}
                   className="bg-[#FAD03C] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                 >
@@ -142,7 +155,8 @@ console.log(categoryId)
                 </button>
               )}
               {blogData?.data?.data?.data?.next_page_url !== null && (
-                <button onClick={()=>setPage((prevPage)=>prevPage + 1)}
+                <button
+                  onClick={() => setPage((prevPage) => prevPage + 1)}
                   className="bg-[#FAD03C] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                 >
@@ -165,7 +179,6 @@ console.log(categoryId)
             />
           </div>
         )}
-      
       </div>
     </div>
   );

@@ -78,7 +78,8 @@ const Blog = () => {
                   {isAmh ? item.title.amharic : item.title.english}
                 </h1>
                 <p className="text-sm line-clamp-2">
-                  {isAmh ? item.body.amhric : item.body.english}
+                  
+                  {isAmh ? item.body.amharic : item.body.english}
                 </p>
               </div>
             ))
@@ -106,7 +107,7 @@ const Blog = () => {
             className="text-[#AC7729] font-medium hover:underline cursor-pointer "
           >
             {" "}
-            {isAmh ? 'ሙሉ ብሎግ ያንብቡ' :'Read Full Blog'}
+            {isAmh ? "ሙሉ ብሎግ ያንብቡ" : "Read Full Blog"}
           </span>
         </p>
       </div>

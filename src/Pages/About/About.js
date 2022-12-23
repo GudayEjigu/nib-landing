@@ -69,17 +69,17 @@ const About = () => {
     }
   );
   
-  const orderOne= managementData?.data?.data?.data?.filter((item)=>item.order == 1)
-  const orderTwo= managementData?.data?.data?.data?.filter((item)=>item.order == 2)
-  const orderThree= managementData?.data?.data?.data?.filter((item)=>item.order == 3)
-  const orderFour= managementData?.data?.data?.data?.filter((item)=>item.order == 4)
+  const orderOne= managementData?.data?.data?.data?.filter((item)=>item.order == 1  && item.type === "Top Managment")
+  const orderTwo= managementData?.data?.data?.data?.filter((item)=>item.order == 2 && item.type === "Top Managment")
+  const orderThree= managementData?.data?.data?.data?.filter((item)=>item.order == 3 && item.type === "Top Managment")
+  const orderFour= managementData?.data?.data?.data?.filter((item)=>item.order == 4 && item.type === "Top Managment")
     
-  const orderFive= managementData?.data?.data?.data?.filter((item)=>item.order == 5)
-  const orderSix= managementData?.data?.data?.data?.filter((item)=>item.order == 6)
-  const orderSeven= managementData?.data?.data?.data?.filter((item)=>item.order == 7)
-  const orderEight= managementData?.data?.data?.data?.filter((item)=>item.order == 8)
-  const orderNine= managementData?.data?.data?.data?.filter((item)=>item.order == 9)
-  const orderTen= managementData?.data?.data?.data?.filter((item)=>item.order == 10)
+  const orderFive= managementData?.data?.data?.data?.filter((item)=>item.order == 5 && item.type === "Top Managment")
+  const orderSix= managementData?.data?.data?.data?.filter((item)=>item.order == 6 && item.type === "Top Managment")
+  const orderSeven= managementData?.data?.data?.data?.filter((item)=>item.order == 7 && item.type === "Top Managment")
+  const orderEight= managementData?.data?.data?.data?.filter((item)=>item.order == 8 && item.type === "Top Managment")
+  const orderNine= managementData?.data?.data?.data?.filter((item)=>item.order == 9 && item.type === "Top Managment")
+  const orderTen= managementData?.data?.data?.data?.filter((item)=>item.order == 10 && item.type === "Top Managment")
   console.log(orderOne)
   return (
     <div className="">

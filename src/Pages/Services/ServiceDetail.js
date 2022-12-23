@@ -25,7 +25,7 @@ const ServiceDetail = () => {
         ["serviceDetailDataApi",id],
         async () =>
           await axios.get(
-            `${process.env.REACT_APP_BACKEND_URL}home/vacancies/details/${id}`,
+            `${process.env.REACT_APP_BACKEND_URL}home/services/details/${id}`,
             {
               headers,
             }
@@ -38,7 +38,8 @@ const ServiceDetail = () => {
           onSuccess: (res) => {},
         }
       );
-    //   console.log(vacancyDetails?.data?.data?.data?.Detail)
+      console.log(serviceDetails?.data?.data?.data?.Detail?.title?.amharic
+        )
   return (
     <div>
         <div
@@ -66,18 +67,18 @@ const ServiceDetail = () => {
 <div className="max-w-3xl">
 {/* <button onClick={()=>navigate('/services')}
 className="border border-gray-400 rounded-md p-3">Back</button> */}
+   <h1 className="text-gray-700 text-center font-bold text-2xl py-5 md:text-4xl">
+           {isAmh ? 'የአገልግሎት ዝርዝር' :' SERVICE DETAIL'}
+          </h1>
 <div className="bg-white p-3 rounded-md shadow-md">
   {serviceDetails.isFetched ? (
         <div className="flex flex-col items-start space-y-2">
-  <h1 className="font-semibold text-xl capitalize line-clamp-2">Job Title:
-           <span className="font-semibold text-xl"> {serviceDetails?.data?.data?.data?.Detail?.title}</span>
+  <h1 className="font-semibold text-xl capitalize line-clamp-2">
+           <span className="font-semibold text-xl"> {isAmh ? serviceDetails?.data?.data?.data?.Detail?.title?.amharic : serviceDetails?.data?.data?.data?.Detail?.title?.english}</span>
           </h1>
-          <h1 className="  line-clamp-2 font-semibold">Job description:
-           <span className="text-sm font-normal"> {serviceDetails?.data?.data?.data?.Detail?.description}</span>
-          </h1>
-          <h1 className="font-semibold text-sm ">Deadline:
-            <span> {serviceDetails?.data?.data?.data?.Detail?.deadline}</span>
-          </h1>
+          <p className=" "> {isAmh ? serviceDetails?.data?.data?.data?.Detail?.body?.amharic : serviceDetails?.data?.data?.data?.Detail?.body?.english}
+          </p>
+      
         </div>
       ) : (
         <div className="flex items-center justify-center w-full py-10">

@@ -7,17 +7,20 @@ import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import { HomeProvider } from "./context/HomeContext";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { AuthProvider } from "./context/auth";
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <QueryClientProvider client={queryClient}>
-    {/* <ChakraProvider>
-    </ChakraProvider> */}
+    <ChakraProvider>
       <HomeProvider>
         <BrowserRouter>
-          <ScrollToTop />
-          <App />
+          <AuthProvider>
+            <ScrollToTop />
+            <App />
+          </AuthProvider>
         </BrowserRouter>
       </HomeProvider>
+    </ChakraProvider>
   </QueryClientProvider>
 );

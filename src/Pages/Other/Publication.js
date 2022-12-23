@@ -102,18 +102,15 @@ const Publication = () => {
               <h1 className="font-medium">
                 {isAmh ? "በምድብ አጣራ" : "Filter By Category"}
               </h1>
-              <select
-                onChange={(e) => setPublicationId(e.target.value)}
-                name=""
-                id=""
-                className="max-w-sm w-full border-2 border-gray-400 p-2 rounded-md"
-              >
+              <div className="max-w-6xl mx-auto w-full flex items-center space-x-2 overflow-x-scroll scrollbar-hide">
                 {publicationCategoryDataDatas?.data?.data?.data?.map((item) => (
-                  <option value={item.id}>
+                  <button onClick={() => setPublicationId(item.id)}
+                  className="bg-[#a27128] p-2 w-fit flex flex-shrink-0 font-medium text-white rounded-md  ">
+                    {" "}
                     {isAmh ? item.name.amharic : item.name.english}
-                  </option>
+                  </button>
                 ))}
-              </select>
+              </div>
             </div>
           </div>
         )}
@@ -133,8 +130,9 @@ const Publication = () => {
         </div> */}
         <div className="w-full max-w-6xl mx-auto py-10  p-3 md:py-20">
           <h1 className="text-gray-700 text-center font-bold text-2xl py-5 md:text-4xl">
-          {isAmh ? "ህትመት" : "Publication"}
+            {isAmh ? "ህትመት" : "Publication"}
           </h1>
+
           {publicationDataDatas.isFetched ? (
             <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-3">
               {publicationDataDatas?.data?.data?.data?.map((item) => (

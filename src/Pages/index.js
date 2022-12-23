@@ -11,3 +11,5 @@ export {default as VacancyDetails} from './Vacancy/VacancyDetails'
 export {default as Publication} from './Other/Publication'
 export {default as Branches} from './Other/Branches'
 
+export {default as Profile} from './Profile/Profile'
+
