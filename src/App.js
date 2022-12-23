@@ -25,6 +25,7 @@ import { useAuth } from "./context/auth";
 const App = () => {
   const { isAmh, changeLang } = useLang();
   const {user,token} = useAuth()
+  //return
   return (
     <LangContext.Provider value={{ isAmh, changeLang }}>
       <div className="relative w-full  ">
