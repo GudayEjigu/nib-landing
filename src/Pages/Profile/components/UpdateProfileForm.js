@@ -10,7 +10,7 @@ const UpdateProfileForm = ({ setIsModalOpen }) => {
   const { user, token } = useAuth();
   const headers = {
     "Content-Type": "application/json",
-    Accept: "application/json",
+    Accept: "multipart/form-data",
     Authorization: `Bearer ${token}`,
   };
   const profileValidationSchema = Yup.object().shape({
@@ -23,6 +23,7 @@ const UpdateProfileForm = ({ setIsModalOpen }) => {
     height: Yup.mixed().nullable().required("height is required"),
     weight: Yup.string().required("weight is required"),
     profession: Yup.string().required("profession is required"),
+    image: Yup.mixed().nullable().optional(),
   });
 
   const updateMutation = useMutation(
@@ -52,6 +53,7 @@ const UpdateProfileForm = ({ setIsModalOpen }) => {
           height: values.height,
           weight: values.weight,
           profession: values.profession,
+          profile_image: values.image,
         },
         {
           onSuccess: (responseData) => {
@@ -79,7 +81,7 @@ const UpdateProfileForm = ({ setIsModalOpen }) => {
     }
   };
   return (
-    <div className="p-3">
+    <div className="p-3 w-full">
       <h1 className="text-gray-700 text-xl font-bold pb-4">
         Update Your Profile
       </h1>
@@ -94,6 +96,7 @@ const UpdateProfileForm = ({ setIsModalOpen }) => {
           height: "",
           weight: "",
           profession: "",
+          image: null,
         }}
         validationSchema={profileValidationSchema}
         onSubmit={updateProfileMutationHandler}
@@ -117,6 +120,7 @@ const UpdateProfileForm = ({ setIsModalOpen }) => {
                   <p className="text-[13px] text-red-500">{errors.name}</p>
                 ) : null}
               </div>
+
               {/* dob */}
               <div className="flex flex-col w-full items-start space-y-1">
                 <Field
@@ -256,6 +260,30 @@ const UpdateProfileForm = ({ setIsModalOpen }) => {
                   </p>
                 ) : null}
               </div>
+            </div>
+            {/* image */}
+            <div className="flex flex-col w-full items-start space-y-1">
+              <input
+                as="input"
+                name="image"
+                type="file"
+                className={`rounded-md w-[50%] p-1 flex items-center focus:outline-none  pl-3
+                text-dark-gray  border border-slate-400 text-gray-500  ${
+                  errors.image && touched.image
+                    ? "border border-red-600"
+                    : "border border-slate-400  "
+                }`}
+                onChange={(event) => {
+                  setTouched({
+                    touched,
+                    image: true,
+                  });
+                  setFieldValue("image", event.target.files[0]);
+                }}
+              />
+              {errors.image && touched.image ? (
+                <p className="text-[13px] text-red-500">{errors.image}</p>
+              ) : null}
             </div>
             <button
               type="submit"

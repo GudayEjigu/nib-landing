@@ -51,8 +51,10 @@ const Profile = () => {
               className="h-12 w-12 rounded-sm"
               alt=""
             />
-            <h2>{user?.email}</h2>
-            <h2>{user?.phone}</h2>
+            <div>
+              <h2 className="font-bold text-gray-500">{user?.name}</h2>
+              <h2 className="font-bold text-gray-500">{user?.phone}</h2>
+            </div>
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
@@ -66,41 +68,80 @@ const Profile = () => {
           <h2 className="font-bold text-gray-600 text-xl">Address</h2>
           <div>
             {profileData.isFetched ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 pt-5">
-                <div>
-                  <h1 className="text-sm text-gray-400">City</h1>
-                  <h1>{profileData?.data?.data?.address?.city}</h1>
+              <div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 pt-5">
+                  <div>
+                    <h1 className="text-sm text-gray-400">City</h1>
+                    <h1>{profileData?.data?.data?.address?.city}</h1>
+                  </div>
+                  <div>
+                    <h1 className="text-sm text-gray-400">kebele</h1>
+                    <h1>{profileData?.data?.data?.address?.kebele}</h1>
+                  </div>
+                  <div>
+                    <h1 className="text-sm text-gray-400">sub-city</h1>
+                    <h1>{profileData?.data?.data?.address?.sub_city}</h1>
+                  </div>
+                  <div>
+                    <h1 className="text-sm text-gray-400">Woroda</h1>
+                    <h1>{profileData?.data?.data?.address?.woreda}</h1>
+                  </div>
+                  {/* height */}
+                  <div>
+                    <h1 className="text-sm text-gray-400">Date of Birth</h1>
+                    <h1>{profileData?.data?.data?.dob}</h1>
+                  </div>
+                  <div>
+                    <h1 className="text-sm text-gray-400">Height</h1>
+                    <h1>{profileData?.data?.data?.additional_info?.height}</h1>
+                  </div>
+                  <div>
+                    <h1 className="text-sm text-gray-400">Weight</h1>
+                    <h1>{profileData?.data?.data?.additional_info?.weight}</h1>
+                  </div>
+                  <div>
+                    <h1 className="text-sm text-gray-400">Profession</h1>
+                    <h1>
+                      {profileData?.data?.data?.additional_info?.Profession}
+                    </h1>
+                  </div>
                 </div>
-                <div>
-                  <h1 className="text-sm text-gray-400">kebele</h1>
-                  <h1>{profileData?.data?.data?.address?.kebele}</h1>
-                </div>
-                <div>
-                  <h1 className="text-sm text-gray-400">sub-city</h1>
-                  <h1>{profileData?.data?.data?.address?.sub_city}</h1>
-                </div>
-                <div>
-                  <h1 className="text-sm text-gray-400">Woroda</h1>
-                  <h1>{profileData?.data?.data?.address?.woreda}</h1>
-                </div>
-                {/* height */}
-                <div>
-                  <h1 className="text-sm text-gray-400">Date of Birth</h1>
-                  <h1>{profileData?.data?.data?.dob}</h1>
-                </div>
-                <div>
-                  <h1 className="text-sm text-gray-400">Height</h1>
-                  <h1>{profileData?.data?.data?.additional_info?.height}</h1>
-                </div>
-                <div>
-                  <h1 className="text-sm text-gray-400">Weight</h1>
-                  <h1>{profileData?.data?.data?.additional_info?.weight}</h1>
-                </div>
-                <div>
-                  <h1 className="text-sm text-gray-400">Profession</h1>
-                  <h1>
-                    {profileData?.data?.data?.additional_info?.Profession}
-                  </h1>
+                {/* policoies */}
+                <h2 className="font-bold text-gray-600 text-xl pt-10">
+                  Your Policies
+                </h2>
+                <div className="grid grid-cols-1 md grid-cols-3 gap-3 ">
+                  {profileData?.data?.data?.policies?.map((item) => (
+                    <div className="relative flex cursor-pointer items-center space-x-2 bg-white  rounded-md shadow-lg">
+                      <div className="bg-red-500 w-5 h-full" />
+                      <div className="py-5 px-2">
+                        <h1 className="text-sm font-medium">
+                          Policy Name:{" "}
+                          <span className="text-lg font-medium">
+                            {item.policy_type.name}
+                          </span>
+                        </h1>
+                        <h1 className="text-sm font-medium">
+                          policy Number:{" "}
+                          <span className="text-lg font-medium">
+                            {item.policy_number}
+                          </span>
+                        </h1>
+                        <h1 className="text-sm font-medium">
+                          Policy Start Date:{" "}
+                          <span className="text-lg font-medium">
+                            {item.policy_start}
+                          </span>
+                          <h1 className="text-sm font-medium">
+                            Policy End Date:{" "}
+                            <span className="text-lg font-medium">
+                              {item.policy_end}
+                            </span>
+                          </h1>
+                        </h1>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ) : (

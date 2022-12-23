@@ -39,16 +39,16 @@ const UpdateProfileModal = ({ isModalOpen, setIsModalOpen }) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel
-                  className="w-full max-w-2xl transform overflow-hidden rounded-2xl
+                  className="w-full max-w-4xl transform overflow-hidden rounded-2xl
                bg-white  text-left align-middle shadow-xl transition-all"
                 >
                   <div
                     onClick={() => setIsModalOpen(false)}
-                    className="absolute right-3 top-2 border-2 rounded-md border-[#00a69c] p-1 cursor-pointer"
+                    className="absolute right-3  top-2 border-2 rounded-md border-[#00a69c] p-1 cursor-pointer"
                   >
                     <FaTimes size={15} className="" />
                   </div>
-                  <div className="py-8">
+                  <div className="py-8 w-full">
                     <UpdateProfileForm setIsModalOpen={setIsModalOpen} />
                   </div>
                 </Dialog.Panel>

@@ -33,6 +33,7 @@ const Services = () => {
     }
   );
   
+  console.log(serviceData?.data?.data?.data)
   return (
     <div className="relative pt-14">
          <div className='absolute left-0 top-0 bottom-0 h-full z-10 hidden md:flex'>

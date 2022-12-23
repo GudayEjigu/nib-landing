@@ -41,7 +41,7 @@ const Services = () => {
       onSuccess: (res) => {},
     }
   );
-  console.log(servicesData?.data?.data?.data[0]?.category?.name?.amharic);
+  console.log(servicesData?.data?.data);
   return (
     <div>
       <div

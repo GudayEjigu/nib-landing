@@ -18,12 +18,14 @@ import { useToast } from "@chakra-ui/react";
 import { useMutation } from "react-query";
 import axios from "axios";
 import { useAuth } from "../../context/auth";
+import { useNavigate } from "react-router-dom";
 const LoginForm = ({ setIsSignIn ,setIsModalOpen}) => {
   const [phone, setPhone, PhoneError] = useValidPhone();
   const [hasPhone, setHasPhone] = useState(false);
   const [Code, setCode] = useState("");
   const toast = useToast();
   const {login} = useAuth()
+  const navigate = useNavigate()
   const headers = {
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -138,6 +140,7 @@ const LoginForm = ({ setIsSignIn ,setIsModalOpen}) => {
           onSuccess: (responseData) => {
             setIsModalOpen(false)
             console.log(responseData?.data)
+            navigate('/profile')
             login(responseData?.data?.token, responseData?.data?.user);
             toast({
               title: "Success",
