@@ -11,6 +11,7 @@ import axios from "axios";
 import { useLang } from "../../context/lang";
 import { ThreeDots } from "react-loader-spinner";
 import { useQuery } from "react-query";
+import parse from 'html-react-parser';
 const ServiceDetail = () => {
     const navigate = useNavigate();
     const { isAmh } = useContext(LangContext);
@@ -76,7 +77,7 @@ className="border border-gray-400 rounded-md p-3">Back</button> */}
   <h1 className="font-semibold text-xl capitalize line-clamp-2">
            <span className="font-semibold text-xl"> {isAmh ? serviceDetails?.data?.data?.data?.Detail?.title?.amharic : serviceDetails?.data?.data?.data?.Detail?.title?.english}</span>
           </h1>
-          <p className=" "> {isAmh ? serviceDetails?.data?.data?.data?.Detail?.body?.amharic : serviceDetails?.data?.data?.data?.Detail?.body?.english}
+          <p className=" "> {parse(isAmh ? serviceDetails?.data?.data?.data?.Detail?.body?.amharic : serviceDetails?.data?.data?.data?.Detail?.body?.english)}
           </p>
       
         </div>

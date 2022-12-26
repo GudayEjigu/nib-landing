@@ -10,6 +10,7 @@ import axios from "axios";
 import { useLang } from "../../../context/lang";
 import { ThreeDots } from "react-loader-spinner";
 import { useQuery } from "react-query";
+import ReactHtmlParser from "react-html-parser";
 const About = () => {
   const {isAmh} =useContext(LangContext);
   const headers = {
@@ -71,7 +72,7 @@ const About = () => {
         
           <h4 className="text-[#000] font-bold text-2xl">{isAmh ?  'መመስረት':'Establishment'}</h4>
           <p className="text-sm">
-         {isAmh ? aboutDatas?.data?.data?.data?.establishment?.amharic : aboutDatas?.data?.data?.data?.establishment?.english}
+         {ReactHtmlParser(isAmh ? aboutDatas?.data?.data?.data?.establishment?.amharic : aboutDatas?.data?.data?.data?.establishment?.english)}
           </p>
           {/* <button className="bg-[#FAD03C] p-2 px-5 text-white rounded-sm font-medium w-fit">
             read more
@@ -88,7 +89,7 @@ const About = () => {
               <div className="w-10 bg-[#FAD03C] h-[2px]" />
             </div>
             <p className="text-sm">
-            {isAmh ? aboutDatas?.data?.data?.data?.mission?.amharic : aboutDatas?.data?.data?.data?.mission?.english}
+            {ReactHtmlParser(isAmh ? aboutDatas?.data?.data?.data?.mission?.amharic : aboutDatas?.data?.data?.data?.mission?.english)}
             </p>
           </div>
           <div className="bg-white shadow-lg rounded-lg p-5">
@@ -97,7 +98,7 @@ const About = () => {
               <div className="w-10 bg-[#FAD03C] h-[2px]" />
             </div>
             <p className="text-sm">
-            {isAmh ? aboutDatas?.data?.data?.data?.vision?.amharic : aboutDatas?.data?.data?.data?.vision?.english}
+            {ReactHtmlParser(isAmh ? aboutDatas?.data?.data?.data?.vision?.amharic : aboutDatas?.data?.data?.data?.vision?.english)}
             </p>
           </div>
           <div className="bg-white shadow-lg rounded-lg p-5">
@@ -106,7 +107,7 @@ const About = () => {
               <div className="w-10 bg-[#FAD03C] h-[2px]" />
             </div>
             <p className="text-sm">
-            {isAmh ? aboutDatas?.data?.data?.data?.values?.amharic : aboutDatas?.data?.data?.data?.values?.english}
+            {ReactHtmlParser(isAmh ? aboutDatas?.data?.data?.data?.values?.amharic : aboutDatas?.data?.data?.data?.values?.english)}
 
             </p>
           </div>

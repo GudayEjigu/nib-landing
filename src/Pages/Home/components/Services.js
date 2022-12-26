@@ -6,7 +6,7 @@ import bodyone from '../../../assets/bodyone.png'
 import bodytwo from '../../../assets/bodytwo.png'
 import axios from "axios";
 import { useQuery } from "react-query";
-
+import parse from 'html-react-parser';
 import { useNavigate } from "react-router-dom";
 const Services = () => {
   const {isAmh} =useContext(LangContext);
@@ -73,7 +73,7 @@ const Services = () => {
                  className="bg-white relative p-3 z-40 rounded-lg shadow-lg flex flex-col items-center justify-center">
                    <img  src={item.service_photo} alt="" className="h-36" />
                    <h1 className="text-xl font-bold text-black ">{isAmh ? item.title?.amharic :item.title?.english}</h1>
-                   <p className="text-sm text-center pb-14">{isAmh ? item.body.amharic : item.body?.english}</p>
+                   <p className="text-sm text-center pb-14">{parse(isAmh ? item.body.amharic : item.body?.english)}</p>
                        <h4 
                           onClick={() => navigate(`/services/detail/${item.id}`)}
                        className="cursor-pointer hover:opacity-70 absolute bottom-0 my-5 font-bold  text-[#AC7729] pt-5">
@@ -122,7 +122,7 @@ const Services = () => {
                  className="bg-white relative p-3 z-40 rounded-lg shadow-lg flex flex-col items-center justify-center">
                    <img  src={item.service_photo} alt="" className="h-36" />
                    <h1 className="text-xl font-bold text-black ">{isAmh ? item.title?.amharic :item.title?.english}</h1>
-                   <p className="text-sm text-center pb-14">{isAmh ? item.body.amharic : item.body?.english}</p>
+                   <p className="text-sm text-center pb-14">{parse(isAmh ? item.body.amharic : item.body?.english)}</p>
                        <h4 
                          onClick={() => navigate(`/services/detail/${item.id}`)}
                        className="cursor-pointer hover:opacity-70 absolute bottom-0 my-5 font-bold  text-[#AC7729] pt-5">

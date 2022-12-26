@@ -10,6 +10,7 @@ import axios from "axios";
 import { useLang } from "../../context/lang";
 import { ThreeDots } from "react-loader-spinner";
 import { useQuery } from "react-query";
+import parse from 'html-react-parser';
 const VacancyDetails = () => {
     const navigate = useNavigate();
     const { isAmh } = useLang();
@@ -72,7 +73,7 @@ const VacancyDetails = () => {
                <span className="font-semibold text-xl"> {vacancyDetails?.data?.data?.data?.Detail?.title}</span>
               </h1>
               <h1 className="  line-clamp-2 font-semibold">Job description:
-               <span className="text-sm font-normal"> {vacancyDetails?.data?.data?.data?.Detail?.description}</span>
+               <span className="text-sm font-normal"> {parse(vacancyDetails?.data?.data?.data?.Detail?.description)}</span>
               </h1>
               <h1 className="font-semibold text-sm ">Deadline:
                 <span> {vacancyDetails?.data?.data?.data?.Detail?.deadline}</span>

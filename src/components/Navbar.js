@@ -83,7 +83,7 @@ const Navbar = () => {
   return (
     <>
       <header className="relative top-0">
-        <div className="fixed z-40  w-full p-3 ">
+        <div className="fixed z-50  w-full p-3 ">
           <div className="max-w-6xl mx-auto bg-white rounded-md flex items-center justify-between p-2">
             <Link to="/">
               <img src={Logo} alt="" className="h-12" />

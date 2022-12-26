@@ -12,6 +12,7 @@ import { useLang } from "../../context/lang";
 import { ThreeDots } from "react-loader-spinner";
 import { useQuery } from "react-query";
 import axios from "axios";
+import parse from 'html-react-parser';
 import {
   Accordion,
   AccordionItem,
@@ -97,12 +98,12 @@ const Faq = () => {
                   <AccordionItem>
                     <AccordionItemHeading>
                       <AccordionItemButton>
-                       {isAmh ? item.question.amharic : item.question.english}
+                       {parse(isAmh ? item.question.amharic : item.question.english)}
                       </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                       <p>
-                      {isAmh ? item.answer.amharic : item.answer.english}
+                      {parse(isAmh ? item.answer.amharic : item.answer.english)}
                       </p>
                     </AccordionItemPanel>
                   </AccordionItem>
