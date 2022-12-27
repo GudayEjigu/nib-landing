@@ -19,20 +19,21 @@ const Contact = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 p-3 gap-3">
           <div className="flex items-start space-y-1 flex-col">
-            <p className="font-medium">Your Benefits</p>
+            <p className="font-medium">{isAmh ? 'የእርስዎ ጥቅሞች' :'Your Benefits'}</p>
             <h1 className="text-2xl md:text-3xl font-bold">
              {isAmh ?   'ለማንኛውም ጥያቄ መልእክቱን ጣሉልን' :' DROP US MESSAGE FOR ANY QUERY'}
             </h1>
             <p className="text-sm">
-              Nib Insurance Company (NIC) was established by 658 shareholders
-              with an authorized capital of
+              {isAmh ? `ንብ ኢንሹራንስ ኩባንያ በ658 ባለአክሲዮኖች የተቋቋመ ነው።
+              ከተፈቀደ ካፒታል ጋር` :`Nib Insurance Company (NIC) was established by 658 shareholders
+              with an authorized capital of`}
             </p>
             <form className="flex flex-col space-y-2 flex-grow w-full ">
               <input
                 type="text"
                 name="name"
                 id=""
-                placeholder="your name"
+                placeholder={isAmh ? 'ስም' :"your name"}
                 className="p-2 border  flex-grow rounded-sm"
                 required
               />
@@ -40,7 +41,7 @@ const Contact = () => {
                 type="email"
                 name="email"
                 id=""
-                placeholder="your email"
+                placeholder={isAmh ? "ኢሜይል":"your email"}
                 className="p-2 border  flex-grow rounded-sm"
                 required
               />
@@ -48,7 +49,7 @@ const Contact = () => {
                 type="number"
                 name="phone"
                 id=""
-                placeholder="your phone"
+                placeholder={isAmh ? "ስልክ ቁጥር" : "your phone"}
                 className="p-2 border  flex-grow rounded-sm"
                 required
               />
@@ -58,14 +59,14 @@ const Contact = () => {
                 id=""
                 cols="30"
                 rows="4"
-                placeholder="Your Message"
+                placeholder={isAmh ? "መልእክትህ" :"Your Message"}
                 required
               ></textarea>
               <button
                 type="submit"
                 className="p-2 w-24 px-4 bg-[#ffd137] text-white rounded-md font-medium"
               >
-                Send
+                {isAmh ? 'ላክ' :'Send'}
               </button>
             </form>
           </div>

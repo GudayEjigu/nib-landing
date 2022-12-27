@@ -11,6 +11,7 @@ import { useQuery } from "react-query";
 import { ThreeDots } from "react-loader-spinner";
 import axios from "axios";
 import { useLang } from "../../context/lang";
+import ReactHtmlParser from "react-html-parser";
 const Detail = () => {
   const headers = {
     "Content-Type": "application/json",
@@ -81,7 +82,7 @@ const Detail = () => {
               <h1 className="font-semibold text-2xl py-2 line-clamp-2">
                         {isAmh ? blogDetailData?.data?.data?.data?.Detail?.title?.amharic : blogDetailData?.data?.data?.data?.Detail?.title?.english}
                         </h1>
-              <p className="text-sm">{isAmh ? blogDetailData?.data?.data?.data?.Detail?.body?.amharic : blogDetailData?.data?.data?.data?.Detail?.body?.english}</p>
+              <p className="text-sm">{ReactHtmlParser(isAmh ? blogDetailData?.data?.data?.data?.Detail?.body?.amharic : blogDetailData?.data?.data?.data?.Detail?.body?.english)}</p>
             </div>
           ) : (
             <div className="flex items-center justify-center w-full py-10">

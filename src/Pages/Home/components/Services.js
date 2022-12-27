@@ -77,7 +77,7 @@ const Services = () => {
                        <h4 
                           onClick={() => navigate(`/services/detail/${item.id}`)}
                        className="cursor-pointer hover:opacity-70 absolute bottom-0 my-5 font-bold  text-[#AC7729] pt-5">
-                         Learn more
+                       {isAmh ? 'ተጨማሪ ያንብቡ' :'Learn more'}
                        </h4>
                  </div>
               ))}
@@ -126,7 +126,7 @@ const Services = () => {
                        <h4 
                          onClick={() => navigate(`/services/detail/${item.id}`)}
                        className="cursor-pointer hover:opacity-70 absolute bottom-0 my-5 font-bold  text-[#AC7729] pt-5">
-                         Learn more
+                         {isAmh ? 'ተጨማሪ ያንብቡ' :'Learn more'}
                        </h4>
                  </div>
               ))}

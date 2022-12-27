@@ -69,13 +69,13 @@ const MainBranch = () => {
       editable: true,
     },
   ];
-
+console.log({departments})
   return (
     <div >
       <div className="flex flex-col items-center justify-center w-full py-5">
         <h1 className="font-bold text-2xl text-gray-700">{isAmh ? 'ዋና መስሪያ ቤት' :'Head Office'}</h1>
-        <p className="text-gray-500">Addis Ababa - Ethiopia</p>
-        <p className="text-gray-500">Dembel City Center - Second Floor</p>
+        <p className="text-gray-500">{isAmh ?'አዲስ አበባ - ኢትዮጵያ' :'Addis Ababa - Ethiopia'}</p>
+        <p className="text-gray-500">{isAmh ? 'ደምበል ከተማ ማዕከል - ሁለተኛ ፎቅ' :'Dembel City Center - Second Floor'}</p>
         <p className="text-gray-500">
           Tel. 552 81 95/96, 553 51 29-32, 554 37 05
         </p>
@@ -99,7 +99,7 @@ const MainBranch = () => {
           <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
           <img src={car} className="h-20" alt="" />
           <h1 className="font-bold text-lg text-center text-gray-800">{isAmh ? item.name.amharic :item.name.english}</h1>
-          <p className="font-medium text-gray-500">Phone: {item.direct_phone}</p>
+          <p className="font-medium text-gray-500">Phone: {item.phone}</p>
           <p className="font-medium text-gray-500">Fax: {item.fax}</p>
         </div>
       ))}

@@ -73,6 +73,7 @@ const Navbar = () => {
       onSuccess: (res) => {},
     }
   );
+  console.log(serviceCategoryData?.data?.data)
   const handleLogin = () => {
     if (!user && !token) {
       setIsModalOpen(true);
@@ -226,7 +227,7 @@ const Navbar = () => {
                 onClick={() => navigate("/contact")}
                 className="hidden md:flex bg-[#FAD03C] p-2 px-5 text-white rounded-sm font-medium"
               >
-                Contact us
+               {isAmh ? 'አግኙን' :'Contact us'}
               </button>
               <FaBars className="flex lg:hidden " size={23} onClick={toggle} />
             </div>

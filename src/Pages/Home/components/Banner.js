@@ -55,16 +55,13 @@ const Banner = () => {
       <div className="max-w-6xl mx-auto w-full flex flex-col space-y-2 p-3 md:p-0">
         <div className="flex items-center space-x-2">
           <div className="h-6 w-[2px]  bg-[#ac7729] " />
-          <p className="text-white">{isAmh ?  'በጥሩ እጆች ላይ ነዎት።' :'YOU’RE IN GOOD HANDS.'}</p>
+          <p className="text-white">{isAmh ?  'የእርስዎ ብልህ ምርጫ!' :'Your Intelligent Choice!'}</p>
         </div>
         <h1 className="text-2xl md:text-5xl font-bold max-w-2xl text-white">
-          {isAmh ?   'ስለወደፊቱ ጊዜ ማንም ሊተነብይ አይችልም። እኛ ግን ልንጠብቀው እንችላለን።' :"NO ONE CAN SURELY PREDICT THE FUTURE. BUT WE CAN PROTECT IT."}
+          {isAmh ?   'ለጋራ እድገት አስተማማኝ የኢንሹራንስ ሽፋን እና አገልግሎት!' :"Reliable Insurance cover and service for mutual progress!."}
         </h1>
         <p className="max-w-xl text-white leading-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          {isAmh ? "በህይወት፣ በንብረት እና በተጠያቂነት ስጋቶች ላይ ሽፋን በመስጠት ቀልጣፋ እና ጥራት ያለው አገልግሎት እናቀርባለን።" : "We offer efficient and quality service in the provision of cover against life, property and liability risks."}
         </p>
         <button onClick={()=>navigate('/contact')} 
         className="bg-[#ac7729] p-2 px-5 text-white rounded-sm font-medium w-fit">

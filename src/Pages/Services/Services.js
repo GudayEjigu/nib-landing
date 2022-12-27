@@ -97,7 +97,7 @@ const Services = () => {
                        <h4 
                         onClick={() => navigate(`/services/detail/${item.id}`)}
                        className="cursor-pointer hover:opacity-70  bottom-0  font-bold  text-[#AC7729]">
-                         Learn more
+                          {isAmh ? 'ተጨማሪ ያንብቡ' :'Learn more'}
                        </h4>
                  </div>
             ))

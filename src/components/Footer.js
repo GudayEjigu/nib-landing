@@ -27,19 +27,18 @@ const Footer = () => {
                 {isAmh ? 'ጋዜጣችንን ይቀላቀሉ' :'JOIN OUR NEWSLETTER'}
               </h1>
               <p className="text-sm text-white max-w-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt.
+              {isAmh ? "በህይወት፣ በንብረት እና በተጠያቂነት ስጋቶች ላይ ሽፋን በመስጠት ቀልጣፋ እና ጥራት ያለው አገልግሎት እናቀርባለን።" : "We offer efficient and quality service in the provision of cover against life, property and liability risks."}
               </p>
             </div>
             <div>
               <div className="bg-white flex items-center p-2 rounded-sm w-full">
                 <input
-                  type="text"
-                  placeholder="email"
+                  type="email"
+                  placeholder={isAmh ? 'ኢሜይል' :'Email'}
                   className="flex flex-grow bg-transparent focus:outline-none focus:ring-0 w-full"
                 />
                 <button className="flex-grow flex bg-[#FAD03C] p-2 md:px-5 text-white rounded-sm font-medium">
-                  Subscribe
+                  {isAmh ? 'ይመዝገቡ' :'Subscribe'}
                 </button>
               </div>
             </div>
@@ -49,9 +48,7 @@ const Footer = () => {
             <div className="flex flex-col items-start space-y-2">
               <img src={logo} alt="" />
               <p className="text-sm max-w-xs">
-                Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
-                tempor ut labore et dolore magna aliqua. Quis ipsum suspendisse
-                ultrices gravida. Risus commodo viverra lacus vel facilisis.
+              {isAmh ?   'ለጋራ እድገት አስተማማኝ የኢንሹራንስ ሽፋን እና አገልግሎት!' :"Reliable Insurance cover and service for mutual progress!."}
               </p>
               <div className="flex items-center space-x-2">
                 <div className="bg-[#FAD03C] p-2 rounded-full">
@@ -99,40 +96,41 @@ const Footer = () => {
             </div>
             {/* contact */}
             <div>
-              <h1 className="font-semibold text-xl py-2">CONTACT INFO</h1>
-              <h4 className="font-medium text-lg">HEAD OFFICE</h4>
+              <h1 className="font-semibold text-xl py-2">{isAmh ?'የመገኛ አድራሻ' :'CONTACT INFO'}</h1>
+              <h4 className="font-medium text-lg">{isAmh ?'ዋና መስሪያ ቤት' :'HEAD OFFICE'}</h4>
               <div className="flex flex-col items-start space-y-1">
                 <p className="text-sm">
-                  <span className="font-medium">Location:</span> Addis Ababa -
-                  Ethiopia Dembel City Center - Second Floor
+                  <span className="font-medium">{isAmh ? 'አካባቢ' :'Location'}:</span> {isAmh ? `አዲስ አበባ -
+                  ኢትዮጵያ ደምበል ከተማ ማእከል - ሁለተኛ ፎቅ` :`Addis Ababa -
+                  Ethiopia Dembel City Center - Second Floor`}
                 </p>
                 <p className="text-sm">
-                  <span className="font-medium">Email:</span>
+                  <span className="font-medium">{isAmh ? 'ኢሜይል' :'Email'}:</span>
                   info@nibinsurancethiopia.com
                 </p>
                 <p className="text-sm">
-                  <span className="font-medium">Phone:</span>
+                  <span className="font-medium">{isAmh ?'ስልክ' :'Phone'}:</span>
                   552 81 95/96, 553 51 29-32, 554 37 05
                 </p>
                 <p className="text-sm">
-                  <span className="font-medium">P.O.Box:</span>
+                  <span className="font-medium">{isAmh ? 'ፖ.ሳ. ቁ' :'P.O.Box'}:</span>
                   285
                 </p>
                 <p className="text-sm">
-                  <span className="font-medium"> Fax:</span>
+                  <span className="font-medium"> {isAmh ?'ፋክስ' : 'Fax'}</span>
                   Fax: +1-212-9876543
                 </p>
                 <p className="text-sm">
                   <span className="font-medium"> Fax:</span>
                   Fax: +1-212-9876543
                 </p>
-                <p>View all branchs</p>
+                {/* <p>View all branchs</p> */}
               </div>
             </div>
           </div>
           <div className="flex items-center justify-between flex-wrap md:flex-nowrap text-center py-3">
-            <p className="text-sm text-center w-full text-white">2022 Jakteck. All Rights Reserved.</p>
-            <p className="text-sm text-center w-full text-white">Privacy Policy | Terms & Conditions</p>
+            <p className="text-sm text-center w-full text-white">{new Date().getFullYear()} {isAmh ? '2022 ንብ. መብቱ በህግ የተጠበቀ ነው.' :'NIB. All Rights Reserved.'}</p>
+            <p className="text-sm text-center w-full text-white">{isAmh ? 'የግላዊነት ፖሊሲ | ውሎች እና ሁኔታዎች' :'Privacy Policy | Terms & Conditions'}</p>
           </div>
         </div>
       </div>

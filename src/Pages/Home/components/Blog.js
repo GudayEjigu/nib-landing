@@ -9,7 +9,7 @@ import Moment from "react-moment";
 import bodyone from "../../../assets/bodyone.png";
 import bodytwo from "../../../assets/bodytwo.png";
 import axios from "axios";
-
+import ReactHtmlParser from "react-html-parser";
 const Blog = () => {
   const { isAmh } = useContext(LangContext);
   const [blogData, setBlogData] = useState([]);
@@ -79,7 +79,7 @@ const Blog = () => {
                 </h1>
                 <p className="text-sm line-clamp-2">
                   
-                  {isAmh ? item.body.amharic : item.body.english}
+                  {ReactHtmlParser(isAmh ? item.body.amharic : item.body.english)}
                 </p>
               </div>
             ))

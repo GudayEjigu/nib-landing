@@ -109,9 +109,9 @@ const About = () => {
         <div className="absolute inset-0 bg-black/40" />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
           <h1 className="text-white text-center font-bold text-2xl py-5 md:text-4xl">
-            ABOUT US
+           {isAmh ? 'ስለ እኛ' :' ABOUT US'}
           </h1>
-          <p className="text-sm font-light text-white">HOME/About</p>
+          <p className="text-sm font-light text-white">{isAmh ? 'ቤት/ስለ እኛ' :'HOME/About'}</p>
         </div>
       </div>
       {/*  */}
@@ -141,7 +141,7 @@ const About = () => {
           </div>
 
           {/* order one MANAGEMENT */}
-          <h1 className="font-bold text-2xl text-gray-700">Top Managment</h1>
+          <h1 className="font-bold text-2xl text-gray-700">  {isAmh ? 'ከፍተኛ አስተዳደር' :'Top Managment'}</h1>
          <div>
          <div className="max-w-sm mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
            {orderOne?.map((item)=>(
@@ -241,7 +241,7 @@ const About = () => {
 
 
          {/* directors */}
-         <h1 className="font-bold text-2xl text-gray-700">Directors</h1>
+         <h1 className="font-bold text-2xl text-gray-700">  {isAmh ? 'ዳይሬክተሮች' :'Directors'}</h1>
          <div>
          <div className="max-w-sm mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
            {orderDirectorOne?.map((item)=>(
@@ -349,7 +349,7 @@ const About = () => {
           {/* <img src={bodytwo} alt="" className="h-full object-contain" /> */}
         </div>
         <h1 className="font-bold text-4xl text-center pb-10">
-          MESSAGE FROM BOARD CHAIRMAN
+        {isAmh ? 'መልእክት ከቦርድ ሰብሳቢ' :'MESSAGE FROM BOARD CHAIRMAN'}
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-5 max-w-6xl mx-auto items-start" >

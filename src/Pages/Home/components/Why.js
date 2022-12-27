@@ -33,14 +33,14 @@ const Why = () => {
                 <img src={point} alt="" className="h-8"/>
                 <div>
                     <h1 className="text-white font-bold text-lg ">{isAmh ?'የ25 ዓመታት ልምድ' :'25 YEARS OF EXPERIENCE'}</h1>
-                    <p className="text-sm text-white">Nib Insurance Company (NIC) was established by 658 shareholders with an authorized capital of Birr 50.0 million </p>
+                    <p className="text-sm text-white">{isAmh ? 'ንብ ኢንሹራንስ ኩባንያ በ658 ባለአክሲዮኖች በብር 50.0 ሚሊዮን የተፈቀደ ካፒታል ተቋቁሟል።' :'Nib Insurance Company (NIC) was established by 658 shareholders with an authorized capital of Birr 50.0 million '}</p>
                 </div>
              </div>
              <div className="flex items-start space-x-2">
                 <img src={point} alt="" className="h-8"/>
                 <div>
-                    <h1 className="text-white font-bold text-lg ">{isAmh ?'የ25 ዓመታት ልምድ' :'25 YEARS OF EXPERIENCE'}</h1>
-                    <p className="text-sm text-white">Nib Insurance Company (NIC) was established by 658 shareholders with an authorized capital of Birr 50.0 million </p>
+                    <h1 className="text-white font-bold text-lg ">{isAmh ?'ከ 44 በላይ ቅርንጫፎች' :'More than 44 branches'}</h1>
+                    <p className="text-sm text-white">{isAmh ? "ድርጅቱ ስራውን የሚያከናውነው በዋናው መስሪያ ቤት፣ በ42 ቅርንጫፎች፣ በ1 የእውቂያ ቢሮ እና በ1 ህይወት ማረጋገጫ ቅርንጫፍ ነው። ከቅርንጫፎቹ ውስጥ 27ቱ በአዲስ አበባ ይገኛሉ።" :  "The company undertakes its operation through its head office, 42 branches, 1 contact office and 1 life Assurance branch. Twenty seven of the  branches are located in Addis Ababa."} </p>
                 </div>
              </div>
             </div>
