@@ -28,8 +28,8 @@ const Blog = () => {
     async () =>
       await axios.get(
         categoryId
-          ? `${process.env.REACT_APP_BACKEND_URL}home/blogs/all?page=${page}`
-          : `${process.env.REACT_APP_BACKEND_URL}home/blogs/all`,
+          ? `${process.env.REACT_APP_BACKEND_URL}home/blogs/${categoryId}?page=${page}`
+          : `${process.env.REACT_APP_BACKEND_URL}home/blogs/all?page=${page}`,
         {
           headers,
         }
@@ -144,7 +144,7 @@ const Blog = () => {
                 </div>
               ))}
             </div>
-            <div className="flex items-center justify-between">
+            <div className="max-w-6xl mx-auto p-2 flex items-center justify-center">
               {blogData?.data?.data?.data?.prev_page_url !== null && (
                 <button
                   onClick={() => setPage((prev) => prev - 1)}

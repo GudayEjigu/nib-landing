@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useLang } from "../../context/lang";
 import { ThreeDots } from "react-loader-spinner";
 import { useQuery } from "react-query";
+import car from "../../assets/car.png";
 import axios from "axios";
 import {
     DataGrid,
@@ -32,7 +33,7 @@ const OutlyingBranches = () => {
       },
     }
   );
-console.log(page)  
+console.log(addisAbebaBranchDatas?.data?.data?.data?.OutlyingBranches)  
 const columns = [
     { field: 'index', headerName: 'ID', width: 90 },
     {
@@ -75,8 +76,8 @@ const columns = [
      <div>
 {addisAbebaBranchDatas.isFetched ? (
   <div>
-     <div className='w-full' style={{ height: 630 }}>
-     <DataGrid
+     <div className='w-full grid grid-col-1 md:grid-cols-3 gap-3'>
+     {/* <DataGrid
         rows={addisBranches}
         columns={columns}
         pageSize={12}
@@ -85,10 +86,18 @@ const columns = [
         checkboxSelection={false}
         disableSelectionOnClick
         experimentalFeatures={{ newEditingApi: true }}
-      />
+      /> */}
+         {addisBranches?.map((item)=>(
+          <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
+          <img src={car} className="h-20" alt="" />
+          <h1 className="font-bold text-xl text-gray-800">{isAmh ? item.name.amharic :item.name.english}</h1>
+          <p className="font-medium text-gray-500">Phone: {item.direct_phone}</p>
+          <p className="font-medium text-gray-500">Fax: {item.fax}</p>
+        </div>
+      ))}
      </div>
      <div>
-     <div className="flex items-center justify-between py-3">
+     <div className="flex items-center justify-center space-x-3 py-3">
             {addisAbebaBranchDatas?.data?.data?.data?.OutlyingBranches?.prev_page_url !== null && (
                 <button onClick={()=>setPage((prev)=>prev - 1)}
                   className="bg-[#FAD03C] p-2 px-5 text-white rounded-sm 

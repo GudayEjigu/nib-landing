@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { DataGrid } from "@mui/x-data-grid";
 import { LangContext } from "../../context/LangContext";
+import car from "../../assets/car.png";
 const MainBranch = () => {
   const {isAmh} =useContext(LangContext);
   const [page, setPage] = useState(1);
@@ -83,8 +84,8 @@ const MainBranch = () => {
         <p className="text-gray-500">Website: www.nibinsurancethiopia.com</p>
       </div>
       {departmentsDatas.isFetched ? (
-        <div className="w-full" style={{ height: 700 }}>
-          <DataGrid
+       <div className='w-full grid grid-col-1 md:grid-cols-3 gap-3'>
+          {/* <DataGrid
             rows={departments}
             columns={columns}
             pageSize={12}
@@ -93,7 +94,15 @@ const MainBranch = () => {
             checkboxSelection={false}
             disableSelectionOnClick
             // experimentalFeatures={{ newEditingApi: true }}
-          />
+          /> */}
+             {departments?.map((item)=>(
+          <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
+          <img src={car} className="h-20" alt="" />
+          <h1 className="font-bold text-lg text-center text-gray-800">{isAmh ? item.name.amharic :item.name.english}</h1>
+          <p className="font-medium text-gray-500">Phone: {item.direct_phone}</p>
+          <p className="font-medium text-gray-500">Fax: {item.fax}</p>
+        </div>
+      ))}
         </div>
       ) : (
         <div className="flex items-center justify-center w-full py-10">

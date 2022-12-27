@@ -48,11 +48,11 @@ const Publication = () => {
       retry: false,
       // enabled: !!token,
       onSuccess: (res) => {
-        setPublicationId(null);
+        // setPublicationId(null);
       },
     }
   );
-
+console.log(publicationDataDatas?.data?.data?.data)
   const publicationCategoryDataDatas = useQuery(
     ["publicationCategoryDataApi"],
     async () =>
@@ -70,7 +70,7 @@ const Publication = () => {
       onSuccess: (res) => {},
     }
   );
-  console.log(publicationCategoryDataDatas?.data?.data?.data);
+  // console.log(publicationCategoryDataDatas?.data?.data?.data);
   return (
     <div>
       <div
@@ -102,7 +102,7 @@ const Publication = () => {
               <h1 className="font-medium">
                 {isAmh ? "በምድብ አጣራ" : "Filter By Category"}
               </h1>
-              <div className="max-w-6xl mx-auto w-full flex items-center space-x-2 overflow-x-scroll scrollbar-hide">
+              <div className="max-w-6xl mx-auto w-full flex items-center space-x-2 overflow-x-scroll ">
                 {publicationCategoryDataDatas?.data?.data?.data?.map((item) => (
                   <button onClick={() => setPublicationId(item.id)}
                   className="bg-[#a27128] p-2 w-fit flex flex-shrink-0 font-medium text-white rounded-md  ">

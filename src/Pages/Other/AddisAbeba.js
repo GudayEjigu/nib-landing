@@ -3,6 +3,7 @@ import { useLang } from "../../context/lang";
 import { ThreeDots } from "react-loader-spinner";
 import { useQuery } from "react-query";
 import axios from "axios";
+import car from "../../assets/car.png";
 import {
     DataGrid,
   } from "@mui/x-data-grid";
@@ -75,20 +76,19 @@ const columns = [
      <div>
 {addisAbebaBranchDatas.isFetched ? (
   <div>
-     <div className='w-full' style={{ height: 630 }}>
-     <DataGrid
-        rows={addisBranches}
-        columns={columns}
-        pageSize={12}
-        rowsPerPageOptions={[12]}
-        getRowId={(row) => row.id}
-        checkboxSelection={false}
-        disableSelectionOnClick
-        experimentalFeatures={{ newEditingApi: true }}
-      />
+     <div className='w-full grid grid-col-1 md:grid-cols-3 gap-3'>
+
+      {addisBranches?.map((item)=>(
+          <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
+          <img src={car} className="h-20" alt="" />
+          <h1 className="font-bold text-xl text-gray-800">{isAmh ? item.name.amharic :item.name.english}</h1>
+          <p className="font-medium text-gray-500">Phone: {item.direct_phone}</p>
+          <p className="font-medium text-gray-500">Fax: {item.fax}</p>
+        </div>
+      ))}
      </div>
      <div>
-     <div className="flex items-center justify-between py-3">
+     <div className="flex items-center justify-center space-x-3 py-3">
             {addisAbebaBranchDatas?.data?.data?.data?.AddisAbabaBranches?.prev_page_url !== null && (
                 <button onClick={()=>setPage((prev)=>prev - 1)}
                   className="bg-[#FAD03C] p-2 px-5 text-white rounded-sm 
