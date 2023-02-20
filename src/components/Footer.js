@@ -129,7 +129,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex items-center justify-between flex-wrap md:flex-nowrap text-center py-3">
-            <p className="text-sm text-center w-full text-white">{new Date().getFullYear()} {isAmh ? '2022 ንብ. መብቱ በህግ የተጠበቀ ነው.' :'NIB. All Rights Reserved.'}</p>
+            <p className="text-sm text-center w-full text-white"> {isAmh ? `${new Date().getFullYear()} ንብ. መብቱ በህግ የተጠበቀ ነው.` :`${new Date().getFullYear()} NIB. All Rights Reserved.`}</p>
             <p className="text-sm text-center w-full text-white">{isAmh ? 'የግላዊነት ፖሊሲ | ውሎች እና ሁኔታዎች' :'Privacy Policy | Terms & Conditions'}</p>
           </div>
         </div>

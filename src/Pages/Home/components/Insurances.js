@@ -125,7 +125,7 @@ const Insurances = () => {
         <div>
             <h1 className="text-[#AC7729] text-center font-bold text-2xl pt-10 md:text-4xl">{isAmh ?  "የእኛ የመድን ዋስትና ደላላዎች" : "OUR REINSURANCE BROKERS"}</h1>
               {brockersData.isFetched ? (
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 z-40">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3  gap-3 z-40">
               {brockersData?.data?.data?.data?.REINSURANCE_BROKERS?.map((item)=>(
                 <div className="bg-white p-3 rounded-md shadow-lg flex flex-col space-y-2 items-center justify-center">
                     <div className="flex items-center space-x-3">

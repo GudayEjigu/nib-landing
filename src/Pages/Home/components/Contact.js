@@ -19,15 +19,10 @@ const Contact = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 p-3 gap-3">
           <div className="flex items-start space-y-1 flex-col">
-            <p className="font-medium">{isAmh ? 'የእርስዎ ጥቅሞች' :'Your Benefits'}</p>
             <h1 className="text-2xl md:text-3xl font-bold">
-             {isAmh ?   'ለማንኛውም ጥያቄ መልእክቱን ጣሉልን' :' DROP US MESSAGE FOR ANY QUERY'}
+             {isAmh ?   'ለማንኛውም ጥያቄ መልእክቱን ይላኩለን' :' DROP US MESSAGE FOR ANY QUERY'}
             </h1>
-            <p className="text-sm">
-              {isAmh ? `ንብ ኢንሹራንስ ኩባንያ በ658 ባለአክሲዮኖች የተቋቋመ ነው።
-              ከተፈቀደ ካፒታል ጋር` :`Nib Insurance Company (NIC) was established by 658 shareholders
-              with an authorized capital of`}
-            </p>
+         
             <form className="flex flex-col space-y-2 flex-grow w-full ">
               <input
                 type="text"

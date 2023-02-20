@@ -13,6 +13,7 @@ import { useLang } from "../../context/lang";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { ThreeDots } from "react-loader-spinner";
+import ReactHtmlParser from "react-html-parser";
 const Blog = () => {
   const navigate = useNavigate();
   const [categoryId, setCategoryId] = useState(null);
@@ -138,7 +139,7 @@ const Blog = () => {
                       {isAmh ? item.title.amharic : item.title.english}
                     </h1>
                     <p className="text-sm line-clamp-2">
-                      {isAmh ? item.body.amharic : item.body.english}
+                      {ReactHtmlParser(isAmh ? item.body.amharic : item.body.english)}
                     </p>
                   </div>
                 </div>

@@ -153,7 +153,7 @@ const Detail = () => {
                         <h1 className="font-semibold text-sm line-clamp-2">
                         {isAmh ? item.title?.amharic : item.title?.english}
                         </h1>
-                        <p className="text-sm line-clamp-2">{isAmh ? item.body?.amharic : item.body?.english}</p>
+                        <p className="text-sm line-clamp-2">{ReactHtmlParser(isAmh ? item.body?.amharic : item.body?.english)}</p>
                         <div></div>
                       </div>
                     </div>

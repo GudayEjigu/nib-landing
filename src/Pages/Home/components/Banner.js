@@ -7,6 +7,8 @@ import bodyone from '../../../assets/bodyone.png'
 import bodytwo from '../../../assets/bodytwo.png'
 import { LangContext } from "../../../context/LangContext";
 import { useNavigate } from 'react-router-dom';
+import featureOffece from "../../../assets/featureOffece.jpg";
+
 const Banner = () => {
   const {isAmh} =useContext(LangContext);
   const navigate = useNavigate()
@@ -37,19 +39,13 @@ const Banner = () => {
       {/* second */}
       <div className="  ">
         <img
-          src={mainoffice}
+          src={featureOffece}
           alt="banner one"
           className="h-[550px] md:h-[600px] w-full  object-cover rounded-md border-2 border-white"
         />
       </div>
       {/* third*/}
-      <div className=" ">
-        <img
-          src={mainoffice}
-          alt="banner one"
-          className="h-[550px] md:h-[600px] w-full  object-cover rounded-md border-2 border-white"
-        />
-      </div>
+     
     </Carousel>
     <div className="absolute z-30 top-1/4 flex flex-col items-start w-full">
       <div className="max-w-6xl mx-auto w-full flex flex-col space-y-2 p-3 md:p-0">
