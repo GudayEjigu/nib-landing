@@ -20,7 +20,7 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { ThreeDots } from "react-loader-spinner";
 import { useAuth } from "../context/auth";
-const DropDown = ({ toggle, isOpen, setIsModalOpen,setIsOpen }) => {
+const DropDown = ({ toggle, isOpen, setIsModalOpen, setIsOpen }) => {
   const { isAmh } = useLang();
   const { user, token, logout } = useAuth();
   const headers = {
@@ -30,9 +30,17 @@ const DropDown = ({ toggle, isOpen, setIsModalOpen,setIsOpen }) => {
   };
   const navigate = useNavigate();
   const [openProjects, setOpenProjects] = useState(false);
+  const [openAboutUs, setOpenAboutUs] = useState(false);
+  const [openInsights, setOpenInsights] = useState(false);
 
   const handleShow = () => {
     setOpenProjects(!openProjects);
+  };
+  const handleShowAboutUS = () => {
+    setOpenAboutUs(!openAboutUs);
+  };
+  const handleShowInsights = () => {
+    setOpenInsights(!openInsights);
   };
   const [serviceCategoryies, setServiceCategoryies] = useState([]);
   useEffect(() => {
@@ -62,7 +70,7 @@ const DropDown = ({ toggle, isOpen, setIsModalOpen,setIsOpen }) => {
   const handleLogin = () => {
     if (!user && !token) {
       setIsModalOpen(true);
-      setIsOpen(false)
+      setIsOpen(false);
     } else {
       logout();
     }
@@ -86,20 +94,7 @@ const DropDown = ({ toggle, isOpen, setIsModalOpen,setIsOpen }) => {
           <Link to="/" className="font-medium  text-slate-900" onClick={toggle}>
             Home
           </Link>
-          <Link
-            to="/about"
-            className="font-medium  text-slate-900"
-            onClick={toggle}
-          >
-            About
-          </Link>
-          <Link
-            to="/blogs"
-            className="font-medium  text-slate-900"
-            onClick={toggle}
-          >
-            Blogs
-          </Link>
+
           <div className="flex  flex-col items-start">
             <div
               onClick={handleShow}
@@ -138,6 +133,105 @@ const DropDown = ({ toggle, isOpen, setIsModalOpen,setIsOpen }) => {
               </div>
             )}
           </div>
+
+          <div className="flex  flex-col items-start">
+            <div
+              onClick={handleShowAboutUS}
+              className="flex items-start justify-center space-x-1 cursor-pointer hover:text-sky-500"
+            >
+              <h1 className="font-medium  text-slate-900">About Us</h1>
+              {openAboutUs ? (
+                <BiChevronUp size={25} className="text-slate-900" />
+              ) : (
+                <BiChevronDown className="text-slate-900" size={25} />
+              )}
+            </div>
+            {openAboutUs && (
+              <div className="flex-col transition-all ease-out duration-300  ">
+                <div className="flex flex-col items-start space-y-1 pt-2 pl-5">
+                  <div className="flex flex-col space-y-1 ">
+                    <div className="flex flex-col items-start space-y-2">
+                      <Link
+                        to="/company_overview"
+                        className="font-medium  text-slate-900"
+                        onClick={toggle}
+                      >
+                        {isAmh ? "የኩባንያ አጠቃላይ እይታ" : "Company Overview"}
+                      </Link>
+                      <Link
+                        to="/organization_structure"
+                        className="font-medium  text-slate-900"
+                        onClick={toggle}
+                      >
+                        {isAmh ? "የድርጅት መዋቅር" : "Organization Structure"}{" "}
+                      </Link>{" "}
+                      <Link
+                        to="/executive_managment"
+                        className="font-medium  text-slate-900"
+                        onClick={toggle}
+                      >
+                        {isAmh ? "አስፈፃሚ አስተዳደር" : "Executive Managment"}
+                      </Link>
+                      <Link
+                        to="/branches"
+                        className="font-medium  text-slate-900"
+                        onClick={toggle}
+                      >
+                        List ofBranches
+                      </Link>
+                      <Link
+                        to="/faq"
+                        className="font-medium  text-slate-900"
+                        onClick={toggle}
+                      >
+                        FAQs
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="flex  flex-col items-start">
+            <div
+              onClick={handleShowInsights}
+              className="flex items-start justify-center space-x-1 cursor-pointer hover:text-sky-500"
+            >
+              <h1 className="font-medium  text-slate-900">Insights</h1>
+              {openInsights ? (
+                <BiChevronUp size={25} className="text-slate-900" />
+              ) : (
+                <BiChevronDown className="text-slate-900" size={25} />
+              )}
+            </div>
+            {openInsights && (
+              <div className="flex-col transition-all ease-out duration-300  ">
+                <div className="flex flex-col items-start space-y-1 pt-2 pl-5">
+                  <div className="flex flex-col space-y-1 ">
+                    <div className="flex flex-col items-start space-y-2">
+                      <Link
+                        to="/blogs"
+                        className="font-medium  text-slate-900"
+                        onClick={toggle}
+                      >
+                        News and Announcments
+                      </Link>
+
+                      <Link
+                        to="/publication"
+                        className="font-medium  text-slate-900"
+                        onClick={toggle}
+                      >
+                        Company Publications
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
           <Link
             to="/vacancies"
             className="font-medium  text-slate-900"
@@ -146,44 +240,24 @@ const DropDown = ({ toggle, isOpen, setIsModalOpen,setIsOpen }) => {
             Vacancies
           </Link>
           <Link
-            to="/publication"
-            className="font-medium  text-slate-900"
-            onClick={toggle}
-          >
-            Publications
-          </Link>
-          <Link
-            to="/branches"
-            className="font-medium  text-slate-900"
-            onClick={toggle}
-          >
-            Branches
-          </Link>
-          <Link
-            to="/faq"
-            className="font-medium  text-slate-900"
-            onClick={toggle}
-          >
-            FAQs
-          </Link>
-          <Link
             to="/profile"
             className="font-medium  text-slate-900"
             onClick={toggle}
           >
             Profile
           </Link>
-          <Button bg="#FAD03C" size="md" width="120px">
-            Contact
-          </Button>
+
           <Button onClick={handleLogin}>
             {!user && !token
               ? isAmh
                 ? "ግባ"
-                : "Login"
+                : "Sign In /Sign up"
               : isAmh
               ? "ውጣ"
               : "Logout"}
+          </Button>
+          <Button bg="#FAD03C" size="md" width="120px">
+            Contact
           </Button>
         </div>
       </div>

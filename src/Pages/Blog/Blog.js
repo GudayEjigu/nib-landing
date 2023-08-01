@@ -77,21 +77,29 @@ const Blog = () => {
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
-          <h1 className="text-white text-center font-bold text-2xl py-5 md:text-4xl">
+          <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
             {isAmh ? "ብሎጎች" : "Blogs"}
           </h1>
           <p className="text-sm font-light text-white">
-            {isAmh ? "ቤት/ብሎጎች" : "HOME/BLOG"}
+            {isAmh ? "ቤት/ብሎጎች" : "HOME/Insights"}
           </p>
         </div>
       </div>
       <div className="relative">
-        {/* <div className="absolute left-0 top-0 bottom-0 h-full z-40">
-          <img src={bodyone} alt="" className="h-full object-contain" />
+        <div className="absolute left-0 top-0 bottom-0 h-full z-40">
+          <img
+            src={bodyone}
+            alt=""
+            className="h-full object-contain opacity-20"
+          />
         </div>
         <div className="absolute right-0 top-0 bottom-0 h-full z-40">
-          <img src={bodytwo} alt="" className="h-full object-contain" />
-        </div> */}
+          <img
+            src={bodytwo}
+            alt=""
+            className="h-full object-contain opacity-20"
+          />
+        </div>
         {blogCategoryData.isFetched && (
           <div className="max-w-6xl mx-auto p-3">
             <div className="flex flex-col items-start space-y-2 pt-5">
@@ -139,7 +147,9 @@ const Blog = () => {
                       {isAmh ? item.title.amharic : item.title.english}
                     </h1>
                     <p className="text-sm line-clamp-2">
-                      {ReactHtmlParser(isAmh ? item.body.amharic : item.body.english)}
+                      {ReactHtmlParser(
+                        isAmh ? item.body.amharic : item.body.english
+                      )}
                     </p>
                   </div>
                 </div>
@@ -149,7 +159,7 @@ const Blog = () => {
               {blogData?.data?.data?.data?.prev_page_url !== null && (
                 <button
                   onClick={() => setPage((prev) => prev - 1)}
-                  className="bg-[#FAD03C] p-2 px-5 text-white rounded-sm 
+                  className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                 >
                   Previous
@@ -158,7 +168,7 @@ const Blog = () => {
               {blogData?.data?.data?.data?.next_page_url !== null && (
                 <button
                   onClick={() => setPage((prevPage) => prevPage + 1)}
-                  className="bg-[#FAD03C] p-2 px-5 text-white rounded-sm 
+                  className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                 >
                   Next

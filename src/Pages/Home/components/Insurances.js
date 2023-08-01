@@ -67,14 +67,14 @@ const Insurances = () => {
     <div className="flex flex-col items-center justify-center">
         {/* OUR RE-INSURERS */}
         <div className="w-full">
-            <h1 className="text-[#AC7729] text-center font-bold text-2xl py-5 md:text-4xl">{isAmh ?  "የእኛ ድጋሚ ኢንሹራንስ" : "OUR RE-INSURERS"}</h1>
+            <h1 className="text-[#AC7729] text-center font-semiBold text-2xl py-5 md:text-4xl">{isAmh ?  "የእኛ ድጋሚ ኢንሹራንስ" : "OUR RE-INSURERS"}</h1>
               {brockersData.isFetched ? (
             // <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4  gap-3 z-40">
             //   {brockersData?.data?.data?.data?.RE_INSURERS?.map((item)=>(
             //     <div className="bg-white p-3 rounded-md shadow-lg flex flex-col space-y-2 items-center justify-center">
             //         <div className="flex items-center space-x-3">
             //       <img src={item.broker_photo} alt="" className="h-24 w-20 object-contain"/>
-            //   <h3 className="font-medium text-lg font-bold">{isAmh ?   item?.name?.amharic : item.name?.english}</h3>
+            //   <h3 className="font-medium text-lg font-semiBold">{isAmh ?   item?.name?.amharic : item.name?.english}</h3>
             //         </div>
             //         <button className="border-2 border-gray-700 w-full p-2 font-medium rounded-md"
             //          onClick={()=>window.open(item.link)}>{isAmh ? "ይጎብኙ" : "Vist"}</button>
@@ -97,7 +97,7 @@ const Insurances = () => {
               flex flex-col space-y-2 items-center justify-center">
                   <div className="flex items-center space-x-3">
                 <img src={item.broker_photo} alt="" className="h-24 w-20 object-contain"/>
-            <h3 className="font-medium text-lg font-bold">{isAmh ?   item?.name?.amharic : item.name?.english}</h3>
+            <h3 className="font-medium text-lg font-semiBold">{isAmh ?   item?.name?.amharic : item.name?.english}</h3>
                   </div>
                   <button className="border-2 border-gray-700 w-full p-2 font-medium rounded-md"
                    onClick={()=>window.open(item.link)}>{isAmh ? "ይጎብኙ" : "Vist"}</button>
@@ -123,14 +123,14 @@ const Insurances = () => {
         </div>
         {/* insurances */}
         <div>
-            <h1 className="text-[#AC7729] text-center font-bold text-2xl pt-10 md:text-4xl">{isAmh ?  "የእኛ የመድን ዋስትና ደላላዎች" : "OUR REINSURANCE BROKERS"}</h1>
+            <h1 className="text-[#AC7729] text-center font-semiBold text-2xl pt-10 md:text-4xl">{isAmh ?  "የእኛ የመድን ዋስትና ደላላዎች" : "OUR REINSURANCE BROKERS"}</h1>
               {brockersData.isFetched ? (
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3  gap-3 z-40">
               {brockersData?.data?.data?.data?.REINSURANCE_BROKERS?.map((item)=>(
                 <div className="bg-white p-3 rounded-md shadow-lg flex flex-col space-y-2 items-center justify-center">
                     <div className="flex items-center space-x-3">
                   <img src={item.broker_photo} alt="" className="h-24 w-20 object-contain"/>
-              <h3 className="font-medium text-lg font-bold">{isAmh ?   item?.name?.amharic : item.name?.english}</h3>
+              <h3 className=" text-lg font-semiBold">{isAmh ?   item?.name?.amharic : item.name?.english}</h3>
                     </div>
                     <button className="border-2 border-gray-700 w-full p-2 font-medium rounded-md"
                      onClick={()=>window.open(item.link)}>{isAmh ? "ይጎብኙ" : "Vist"}</button>

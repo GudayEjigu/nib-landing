@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext,useRef } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
 import { LangContext } from "../../context/LangContext";
 import { urlFor, client } from "../../utils/client";
 import two from "../../assets/five.png";
@@ -25,11 +25,14 @@ const Detail = () => {
   const { id } = useParams();
   const { isAmh } = useContext(LangContext);
   const blogDetailData = useQuery(
-    ["blogDetailDataApi",id],
+    ["blogDetailDataApi", id],
     async () =>
-      await axios.get(`${process.env.REACT_APP_BACKEND_URL}home/blogs/details/${id}`, {
-        headers,
-      }),
+      await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}home/blogs/details/${id}`,
+        {
+          headers,
+        }
+      ),
     {
       keepPreviousData: false,
       refetchOnWindowFocus: false,
@@ -38,7 +41,6 @@ const Detail = () => {
       onSuccess: (res) => {},
     }
   );
-  
 
   return (
     <div>
@@ -55,10 +57,12 @@ const Detail = () => {
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
-          <h1 className="text-white text-center font-bold text-2xl py-5 md:text-4xl">
-            {isAmh ? 'የብሎግ ዝርዝር' :'BLOG DETAIL'}
+          <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
+            {isAmh ? "የብሎግ ዝርዝር" : "BLOG DETAIL"}
           </h1>
-          <p className="text-sm font-light text-white">{isAmh ? 'ቤት/ብሎግ ዝርዝር' :'HOME/BLOG DETAIL'}</p>
+          <p className="text-sm font-light text-white">
+            {isAmh ? "ቤት/ብሎግ ዝርዝር" : "HOME/BLOG DETAIL"}
+          </p>
         </div>
       </div>
       {/* detail */}
@@ -80,23 +84,31 @@ const Detail = () => {
                 </Moment>
               </div>
               <h1 className="font-semibold text-2xl py-2 line-clamp-2">
-                        {isAmh ? blogDetailData?.data?.data?.data?.Detail?.title?.amharic : blogDetailData?.data?.data?.data?.Detail?.title?.english}
-                        </h1>
-              <p className="text-sm">{ReactHtmlParser(isAmh ? blogDetailData?.data?.data?.data?.Detail?.body?.amharic : blogDetailData?.data?.data?.data?.Detail?.body?.english)}</p>
+                {isAmh
+                  ? blogDetailData?.data?.data?.data?.Detail?.title?.amharic
+                  : blogDetailData?.data?.data?.data?.Detail?.title?.english}
+              </h1>
+              <p className="text-sm">
+                {ReactHtmlParser(
+                  isAmh
+                    ? blogDetailData?.data?.data?.data?.Detail?.body?.amharic
+                    : blogDetailData?.data?.data?.data?.Detail?.body?.english
+                )}
+              </p>
             </div>
           ) : (
             <div className="flex items-center justify-center w-full py-10">
-            <ThreeDots
-              height="80"
-              width="80"
-              radius="9"
-              color="#a27128"
-              ariaLabel="three-dots-loading"
-              wrapperStyle={{}}
-              wrapperClassName=""
-              visible={true}
-            />
-          </div>
+              <ThreeDots
+                height="80"
+                width="80"
+                radius="9"
+                color="#a27128"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{}}
+                wrapperClassName=""
+                visible={true}
+              />
+            </div>
           )}
         </div>
         {/* second grid */}
@@ -107,58 +119,62 @@ const Detail = () => {
               placeholder="search"
               className="flex flex-grow bg-transparent focus:outline-none focus:ring-0 w-full"
             />
-            <button className="flex-grow flex bg-[#FAD03C] p-2 md:px-5 text-white rounded-sm font-medium">
+            <button className="flex-grow flex bg-[#FDB913] p-2 md:px-5 text-white rounded-sm font-medium">
               <FaSearch className="text-[#AC7729]" />
             </button>
           </div> */}
           {/* popular blogs */}
           <div>
             <div className="py-4">
-              <h1 className="font-bold text-xl capitalize pb-1">
-               {isAmh ? 'ተዛማጅ ብሎጎች' : 'Related Blogs'}
+              <h1 className="font-semiBold text-xl capitalize pb-1">
+                {isAmh ? "ተዛማጅ ብሎጎች" : "Related Blogs"}
               </h1>
-              <div className="w-10 bg-[#FAD03C] h-[2px]" />
+              <div className="w-10 bg-[#FDB913] h-[2px]" />
             </div>
             <div>
-            <div className="flexflex-col items-start space-y-2">
-                  {blogDetailData?.data?.data?.data?.Related?.map((item) => (
-                    <div
-                      onClick={() => {
-                        homeRef.current.scrollIntoView({
-                          behavior: "smooth",
-                          block: "start",
-                        });
-                        navigate(`/blogs/${item.id}`);
-                      }}
-                      className="flex items-center space-x-2 cursor-pointer hover:scale-[1.02] duration-500"
-                    >
-                      <img
-                        src={item.blog_photo}
-                       alt={item?.name}
-                        className="h-20 w-24 object-cover"
-                      />
-                      <div>
-                        <div className="flex items-center space-x-1 py-2">
-                          <CgCalendarDates
-                            size={18}
-                            className="text-gray-400 text-[13px]"
-                          />
-                          <Moment
-                            format="YYYY/MM/DD"
-                            className="text-gray-400 text-[13px]"
-                          >
-                            {item?.published_date}
-                          </Moment>
-                        </div>
-                        <h1 className="font-semibold text-sm line-clamp-2">
-                        {isAmh ? item.title?.amharic : item.title?.english}
-                        </h1>
-                        <p className="text-sm line-clamp-2">{ReactHtmlParser(isAmh ? item.body?.amharic : item.body?.english)}</p>
-                        <div></div>
+              <div className="flexflex-col items-start space-y-2">
+                {blogDetailData?.data?.data?.data?.Related?.map((item) => (
+                  <div
+                    onClick={() => {
+                      homeRef.current.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                      navigate(`/blogs/${item.id}`);
+                    }}
+                    className="flex items-center space-x-2 cursor-pointer hover:scale-[1.02] duration-500"
+                  >
+                    <img
+                      src={item.blog_photo}
+                      alt={item?.name}
+                      className="h-20 w-24 object-cover"
+                    />
+                    <div>
+                      <div className="flex items-center space-x-1 py-2">
+                        <CgCalendarDates
+                          size={18}
+                          className="text-gray-400 text-[13px]"
+                        />
+                        <Moment
+                          format="YYYY/MM/DD"
+                          className="text-gray-400 text-[13px]"
+                        >
+                          {item?.published_date}
+                        </Moment>
                       </div>
+                      <h1 className="font-semibold text-sm line-clamp-2">
+                        {isAmh ? item.title?.amharic : item.title?.english}
+                      </h1>
+                      <p className="text-sm line-clamp-2">
+                        {ReactHtmlParser(
+                          isAmh ? item.body?.amharic : item.body?.english
+                        )}
+                      </p>
+                      <div></div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

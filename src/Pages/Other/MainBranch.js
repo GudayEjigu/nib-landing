@@ -1,4 +1,4 @@
-import React, { useState ,useContext} from "react";
+import React, { useState, useContext } from "react";
 import { useLang } from "../../context/lang";
 import { ThreeDots } from "react-loader-spinner";
 import { useQuery } from "react-query";
@@ -7,7 +7,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { LangContext } from "../../context/LangContext";
 import car from "../../assets/car.png";
 const MainBranch = () => {
-  const {isAmh} =useContext(LangContext);
+  const { isAmh } = useContext(LangContext);
   const [page, setPage] = useState(1);
   const [departments, setDepartments] = useState([]);
   const headers = {
@@ -69,13 +69,21 @@ const MainBranch = () => {
       editable: true,
     },
   ];
-console.log({departments})
+  console.log({ departments });
   return (
-    <div >
+    <div>
       <div className="flex flex-col items-center justify-center w-full py-5">
-        <h1 className="font-bold text-2xl text-gray-700">{isAmh ? 'ዋና መስሪያ ቤት' :'Head Office'}</h1>
-        <p className="text-gray-500">{isAmh ?'አዲስ አበባ - ኢትዮጵያ' :'Addis Ababa - Ethiopia'}</p>
-        <p className="text-gray-500">{isAmh ? 'ደምበል ከተማ ማዕከል - ሁለተኛ ፎቅ' :'Dembel City Center - Second Floor'}</p>
+        <h1 className="font-bold text-2xl text-gray-700">
+          {isAmh ? "ዋና መስሪያ ቤት" : "Head Office"}
+        </h1>
+        <p className="text-gray-500">
+          {isAmh ? "አዲስ አበባ - ኢትዮጵያ" : "Addis Ababa - Ethiopia"}
+        </p>
+        <p className="text-gray-500">
+          {isAmh
+            ? "ደምበል ከተማ ማዕከል - ሁለተኛ ፎቅ"
+            : "Dembel City Center - Second Floor"}
+        </p>
         <p className="text-gray-500">
           Tel. 552 81 95/96, 553 51 29-32, 554 37 05
         </p>
@@ -84,7 +92,7 @@ console.log({departments})
         <p className="text-gray-500">Website: www.nibinsurancethiopia.com</p>
       </div>
       {departmentsDatas.isFetched ? (
-       <div className='w-full grid grid-col-1 md:grid-cols-3 gap-3'>
+        <div className="w-full grid grid-col-1 md:grid-cols-3 gap-3">
           {/* <DataGrid
             rows={departments}
             columns={columns}
@@ -95,14 +103,16 @@ console.log({departments})
             disableSelectionOnClick
             // experimentalFeatures={{ newEditingApi: true }}
           /> */}
-             {departments?.map((item)=>(
-          <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
-          <img src={car} className="h-20" alt="" />
-          <h1 className="font-bold text-lg text-center text-gray-800">{isAmh ? item.name.amharic :item.name.english}</h1>
-          <p className="font-medium text-gray-500">Phone: {item.phone}</p>
-          <p className="font-medium text-gray-500">Fax: {item.fax}</p>
-        </div>
-      ))}
+          {departments?.map((item) => (
+            <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
+              <img src={car} className="h-20" alt="" />
+              <h1 className="font-bold text-lg text-center text-gray-800">
+                {isAmh ? item.name.amharic : item.name.english}
+              </h1>
+              <p className="font-medium text-gray-500">Phone: {item.phone}</p>
+              <p className="font-medium text-gray-500">Fax: {item.fax}</p>
+            </div>
+          ))}
         </div>
       ) : (
         <div className="flex items-center justify-center w-full py-10">
@@ -123,7 +133,7 @@ console.log({departments})
           {departmentsDatas?.data?.data?.data?.prev_page_url !== null && (
             <button
               onClick={() => setPage((prev) => prev - 1)}
-              className="bg-[#FAD03C] p-2 px-5 text-white rounded-sm 
+              className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
             >
               Previous
@@ -132,7 +142,7 @@ console.log({departments})
           {departmentsDatas?.data?.data?.data?.next_page_url !== null && (
             <button
               onClick={() => setPage((prevPage) => prevPage + 1)}
-              className="bg-[#FAD03C] p-2 px-5 text-white rounded-sm 
+              className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
             >
               Next

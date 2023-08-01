@@ -4,9 +4,9 @@ import Marquee from "react-fast-marquee";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { ThreeDots } from "react-loader-spinner";
-import one from '../../../assets/one.png'
+import one from "../../../assets/one.png";
 const Client = () => {
-  const {isAmh} =useContext(LangContext);
+  const { isAmh } = useContext(LangContext);
   const headers = {
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -23,15 +23,15 @@ const Client = () => {
       refetchOnWindowFocus: false,
       retry: false,
       // enabled: !!token,
-      onSuccess: (res) => {
-      },
+      onSuccess: (res) => {},
     }
   );
 
-
   return (
     <div className="pt-8">
-      <h1 className="font-bold text-4xl text-center ">{isAmh ? 'የእኛ ደንበኞች' :'Our Clients'}</h1>
+      <h1 className="font-bold text-4xl text-center ">
+        {isAmh ? "የእኛ ደንበኞች" : "Our Clients"}
+      </h1>
       <div className="bg-white md:p-10  pt-20 flex items-center justify-center w-full ">
         <div className=" flex  items-center justify-center w-full space-x-10">
           {/* {clientData.isFetched ? (
@@ -66,36 +66,33 @@ const Client = () => {
             />
           </div>
           )} */}
-           <div>
-           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3">
-          <div className="bg-white shadow-lg rounded-lg p-5">
-            <div className="py-2">
-              <h1 className="font-bold text-xl ">CREATE ACCOUNT</h1>
-              <div className="w-10 bg-[#FAD03C] h-[2px]" />
+          <div>
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div className="bg-white shadow-lg rounded-lg p-5">
+                <div className="py-2">
+                  <h1 className="font-bold text-xl ">CREATE ACCOUNT</h1>
+                  <div className="w-10 bg-[#FDB913] h-[2px]" />
+                </div>
+                <p className="text-sm"> </p>
+              </div>
+              <div className="bg-white shadow-lg rounded-lg p-5">
+                <div className="py-2">
+                  <h1 className="font-bold text-xl ">By signing up</h1>
+                  <div className="w-10 bg-[#FDB913] h-[2px]" />
+                </div>
+                <p className="text-sm"></p>
+              </div>
+              <div className="bg-white shadow-lg rounded-lg p-5">
+                <div className="py-2">
+                  <h1 className="font-bold text-xl ">
+                    {isAmh ? "እሴቶች" : "Our Values"}
+                  </h1>
+                  <div className="w-10 bg-[#FDB913] h-[2px]" />
+                </div>
+                <p className="text-sm"></p>
+              </div>
             </div>
-            <p className="text-sm"> </p>
           </div>
-          <div className="bg-white shadow-lg rounded-lg p-5">
-           <div className="py-2">
-              <h1 className="font-bold text-xl ">By signing up</h1>
-              <div className="w-10 bg-[#FAD03C] h-[2px]" />
-            </div>
-            <p className="text-sm">
-           
-            </p>
-          </div>
-          <div className="bg-white shadow-lg rounded-lg p-5">
-           <div className="py-2">
-              <h1 className="font-bold text-xl ">{isAmh ? 'እሴቶች' :'Our Values'}</h1>
-              <div className="w-10 bg-[#FAD03C] h-[2px]" />
-            </div>
-            <p className="text-sm">
-           
-
-            </p>
-          </div>
-        </div>
-           </div>
         </div>
       </div>
     </div>

@@ -108,7 +108,7 @@ const About = () => {
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
-          <h1 className="text-white text-center font-bold text-2xl py-5 md:text-4xl">
+          <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
            {isAmh ? 'ስለ እኛ' :' ABOUT US'}
           </h1>
           <p className="text-sm font-light text-white">{isAmh ? 'ቤት/ስለ እኛ' :'HOME/About'}</p>
@@ -130,18 +130,18 @@ const About = () => {
           <img src={bodytwo} alt="" className="h-full object-contain" />
         </div>
         <div className="max-w-6xl mx-auto">
-          <h1 className="font-bold text-4xl text-center pb-10">
+          <h1 className="font-semiBold text-4xl text-center pb-10">
             {isAmh ?  'ድርጅታዊ መዋቅር' :'ORGANIZATIONAL STRUCTURE'}
           </h1>
           <div className="flex flex-col items-start space-y-2 max-w-sm ">
-            <h3 className="font-bold text-lg ">{isAmh ?  'የኩባንያው መዋቅር' :'Company Structure'}</h3>
+            <h3 className="font-semiBold text-lg ">{isAmh ?  'የኩባንያው መዋቅር' :'Company Structure'}</h3>
             <p className=" text-left ">
             {isAmh ? aboutDatas?.data?.data?.data?.company_structure?.amharic : aboutDatas?.data?.data?.data?.company_structure?.english}
             </p>
           </div>
 
           {/* order one MANAGEMENT */}
-          <h1 className="font-bold text-2xl text-gray-700">  {isAmh ? 'ከፍተኛ አስተዳደር' :'Top Managment'}</h1>
+          <h1 className="font-semiBold text-2xl text-gray-700">  {isAmh ? 'ከፍተኛ አስተዳደር' :'Top Managment'}</h1>
          <div>
          <div className="max-w-sm mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
            {orderOne?.map((item)=>(
@@ -241,7 +241,7 @@ const About = () => {
 
 
          {/* directors */}
-         <h1 className="font-bold text-2xl text-gray-700">  {isAmh ? 'ዳይሬክተሮች' :'Directors'}</h1>
+         <h1 className="font-semiBold text-2xl text-gray-700">  {isAmh ? 'ዳይሬክተሮች' :'Directors'}</h1>
          <div>
          <div className="max-w-sm mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
            {orderDirectorOne?.map((item)=>(
@@ -348,7 +348,7 @@ const About = () => {
         <div className="absolute right-0 top-0 bottom-0 h-full z-40  hidden md:flex">
           {/* <img src={bodytwo} alt="" className="h-full object-contain" /> */}
         </div>
-        <h1 className="font-bold text-4xl text-center pb-10">
+        <h1 className="font-semiBold text-4xl text-center pb-10">
         {isAmh ? 'መልእክት ከቦርድ ሰብሳቢ' :'MESSAGE FROM BOARD CHAIRMAN'}
         </h1>
 
@@ -358,7 +358,7 @@ const About = () => {
           </div>
           {/* second grid */}
           <div className="flex flex-col text-start space-y-3">
-            <h1 className="font-bold text-xl  ">{isAmh ? chairmanMessageData?.data?.data?.data?.title?.amharic : chairmanMessageData?.data?.data?.data?.title?.english}</h1>
+            <h1 className="font-semiBold text-xl  ">{isAmh ? chairmanMessageData?.data?.data?.data?.title?.amharic : chairmanMessageData?.data?.data?.data?.title?.english}</h1>
             <p className="text-sm">
             {ReactHtmlParser(isAmh ? chairmanMessageData?.data?.data?.data?.description?.amharic : chairmanMessageData?.data?.data?.data?.description?.english)}
             </p>

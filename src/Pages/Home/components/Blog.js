@@ -39,10 +39,10 @@ const Blog = () => {
 
   return (
     <div className="relative p-3">
-      <div className="absolute left-0 top-0 bottom-0 h-full hidden md:flex ">
+      <div className="absolute left-0 top-0 bottom-0 h-full hidden md:flex opacity-20">
         <img src={bodyone} alt="" className="h-full object-contain" />
       </div>
-      <div className="absolute right-0 top-0 bottom-0 h-full hidden md:flex">
+      <div className="absolute right-0 top-0 bottom-0 h-full hidden md:flex opacity-20">
         <img
           src={bodytwo}
           alt=""
@@ -50,7 +50,7 @@ const Blog = () => {
         />
       </div>
       <div>
-        <h1 className="text-[#AC7729] text-center font-bold text-2xl py-5 md:text-4xl">
+        <h1 className="text-[#AC7729] text-center font-semiBold text-2xl py-5 md:text-4xl">
           {isAmh ? "ብሎጎች" : "Our Blog"}
         </h1>
 

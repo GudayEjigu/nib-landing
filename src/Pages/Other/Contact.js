@@ -16,7 +16,7 @@ const Contact = () => {
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
-          <h1 className="text-white text-center font-bold text-2xl py-5 md:text-4xl">
+          <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
           CONTACT US
           </h1>
           <p className="text-sm font-light text-white">HOME/CONTACT US</p>

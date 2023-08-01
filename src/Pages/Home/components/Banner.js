@@ -53,7 +53,7 @@ const Banner = () => {
           <div className="h-6 w-[2px]  bg-[#ac7729] " />
           <p className="text-white">{isAmh ?  'የእርስዎ ብልህ ምርጫ!' :'Your Intelligent Choice!'}</p>
         </div>
-        <h1 className="text-2xl md:text-5xl font-bold max-w-2xl text-white">
+        <h1 className="text-2xl md:text-5xl font-semiBold max-w-2xl text-white">
           {isAmh ?   'ለጋራ እድገት አስተማማኝ የኢንሹራንስ ሽፋን እና አገልግሎት!' :"Reliable Insurance cover and service for mutual progress!."}
         </h1>
         <p className="max-w-xl text-white leading-5">

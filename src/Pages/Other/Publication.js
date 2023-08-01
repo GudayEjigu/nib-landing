@@ -86,11 +86,11 @@ console.log(publicationDataDatas?.data?.data?.data)
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
-          <h1 className="text-white text-center font-bold text-2xl py-5 md:text-4xl">
+          <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
             {isAmh ? "ህትመት" : "Publication"}
           </h1>
           <p className="text-sm font-light text-white">
-            {isAmh ? "ቤት / ህትመት" : "HOME/Publication"}
+            {isAmh ? "ቤት / ህትመት" : "HOME/Insights"}
           </p>
         </div>
       </div>
@@ -117,10 +117,10 @@ console.log(publicationDataDatas?.data?.data?.data)
       </div>
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 h-full z-10 hidden md:flex">
-          <img src={bodyone} alt="" className="h-full  object-cover" />
+          <img src={bodyone} alt="" className="h-full  object-cover opacity-20" />
         </div>
         <div className="absolute right-0 top-0 bottom-0 h-full z-10 hidden md:flex">
-          <img src={bodytwo} alt="" className="h-full object-contain" />
+          <img src={bodytwo} alt="" className="h-full object-contain opacity-20" />
         </div>
         {/* <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 p-3 z-40">
           <div>
@@ -129,7 +129,7 @@ console.log(publicationDataDatas?.data?.data?.data)
          
         </div> */}
         <div className="w-full max-w-6xl mx-auto py-10  p-3 md:py-20">
-          <h1 className="text-gray-700 text-center font-bold text-2xl py-5 md:text-4xl">
+          <h1 className="text-gray-700 text-center font-semiBold text-2xl py-5 md:text-4xl">
             {isAmh ? "ህትመት" : "Publication"}
           </h1>
 

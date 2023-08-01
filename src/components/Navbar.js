@@ -11,6 +11,7 @@ import DropDown from "./DropDown";
 import { useLang } from "../context/lang";
 import { AiFillSetting } from "react-icons/ai";
 import { TiInputChecked } from "react-icons/ti";
+import { TbWorld } from "react-icons/tb";
 import axios from "axios";
 import { LangContext } from "../context/LangContext";
 import { useQuery } from "react-query";
@@ -73,7 +74,7 @@ const Navbar = () => {
       onSuccess: (res) => {},
     }
   );
-  console.log(serviceCategoryData?.data?.data)
+  console.log(serviceCategoryData?.data?.data);
   const handleLogin = () => {
     if (!user && !token) {
       setIsModalOpen(true);
@@ -83,48 +84,63 @@ const Navbar = () => {
   };
   return (
     <>
-      <header className="relative top-0">
-        <div className="fixed z-50  w-full p-3 ">
-          <div className="max-w-6xl mx-auto bg-white rounded-md flex items-center justify-between p-2">
+      <header className="relative top-0 ">
+        <div className="fixed z-50  w-full   ">
+          <div className=" mx-auto bg-white  flex items-center justify-between p-4 ">
             <Link to="/">
               <img src={Logo} alt="" className="h-12" />
             </Link>
 
             {/* links */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Link to="/" className="font-semibold text-gray-700">
+              <Link to="/" className="font-base text-gray-700  ">
                 {isAmh ? "ቤት" : "Home"}
               </Link>
-              <Link to="/vacancies" className="font-semibold text-gray-700">
-                {isAmh ? "ስራዎች" : "Vacancies"}
-              </Link>
-              <Link to="/about" className="font-semibold text-gray-700">
-                {isAmh ? "ስለ እኛ" : "About us"}
-              </Link>
+
               <div className="hidden md:flex  flex-col  items-center justify-center group">
-                <div className="flex items-center space-x-1 hover:text-[#FAD03C]">
-                  <h1 className="font-semibold text-gray-700 cursor-pointer">
-                    {isAmh ? "አገልግሎቶች" : "services"}
+                <div className="flex items-center space-x-1 hover:text-[#FDB913]">
+                  <h1 className="font-base text-gray-700 cursor-pointer">
+                    {isAmh ? "አገልግሎቶች" : "Services"}
                   </h1>
                   <BiChevronRight />
                 </div>
                 <div
-                  className="p-4 rounded-md absolute  bg-white shadow-lg top-14 z-50
+                  className="p-4 rounded-md absolute  bg-white shadow-lg top-12 z-50
              hidden group-hover:flex group-hover:flex-col transition-all ease-out duration-300  "
                 >
                   <div className="flex flex-col space-y-1 ">
                     {serviceCategoryData.isFetched ? (
                       <div>
-                        {serviceCategoryData?.data?.data?.data?.map((item) => (
-                          <div className="flex flex-col items-start space-y-2">
-                            <Link
-                              className="hover:opacity-80 text-gray-700 font-semibold"
-                              to={`/services/${item.id}`}
-                            >
-                              {isAmh ? item.name.amharic : item.name.english}
-                            </Link>
-                          </div>
-                        ))}
+                        {serviceCategoryData?.data?.data?.data?.map(
+                          (item, id) => (
+                            <div className="flex flex-col items-start space-y-2">
+                              {id != 0 ? (
+                                <>
+                                  <Link
+                                    className="hover:opacity-80 text-gray-700 font-base border border-white pb-2 border-t-orange-200"
+                                    to={`/services/${item.id}`}
+                                  >
+                                    {isAmh
+                                      ? item.name.amharic
+                                      : item.name.english}
+                                  </Link>
+                                </>
+                              ) : (
+                                <>
+                                  {" "}
+                                  <Link
+                                    className="hover:opacity-80 text-gray-700 font-base border border-white pb-2 "
+                                    to={`/services/${item.id}`}
+                                  >
+                                    {isAmh
+                                      ? item.name.amharic
+                                      : item.name.english}
+                                  </Link>
+                                </>
+                              )}
+                            </div>
+                          )
+                        )}
                       </div>
                     ) : (
                       <div className="flex items-center justify-center w-full py-10">
@@ -143,37 +159,110 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-              <Link to="/blogs" className="font-semibold text-gray-700">
-                {isAmh ? "ብሎጎች" : "Blogs"}
-              </Link>
-              <Link to="/publication" className="font-semibold text-gray-700">
-                {isAmh ? "ህትመት" : "Publication"}
-              </Link>
-              <Link to="/branches" className="font-semibold text-gray-700">
-                {isAmh ? "ቅርንጫፎች" : "Branches"}
-              </Link>
-              <Link to="/faq" className="font-semibold text-gray-700">
-                {isAmh ? "ፋክስ" : "Faqs"}
+              <div className="hidden md:flex  flex-col  items-center justify-center group">
+                <div className="flex items-center space-x-1 hover:text-[#FDB913]">
+                  <p className="font-base text-gray-700">
+                    {isAmh ? "ስለ እኛ" : "About us"}
+                  </p>
+
+                  <BiChevronRight />
+                </div>
+                <div
+                  className="p-4 rounded-md absolute  bg-white shadow-lg top-12 z-50
+             hidden group-hover:flex group-hover:flex-col transition-all ease-out duration-300   "
+                >
+                  <Link
+                    to="/company_overview"
+                    className="font-base hover:opacity-80 border  border-white pb-2 border-b-orange-200 text-gray-700"
+                  >
+                    {isAmh ? "የኩባንያ አጠቃላይ እይታ" : "Company Overview"}
+                  </Link>
+                  <Link
+                    to="/organization_structure"
+                    className="font-base hover:opacity-80 border border-white pb-2 border-b-orange-200 text-gray-700"
+                  >
+                    {isAmh ? "የድርጅት መዋቅር" : "Organization Structure"}
+                  </Link>
+                  <Link
+                    to="/executive_managment"
+                    className="font-base hover:opacity-80 border border-white pb-2 border-b-orange-200 text-gray-700"
+                  >
+                    {isAmh ? "አስፈፃሚ አስተዳደር" : "Executive Managment"}
+                  </Link>
+                  <Link
+                    to="/branches"
+                    className="font-base hover:opacity-80 border border-white pb-2 border-b-orange-200 text-gray-700"
+                  >
+                    {isAmh ? "የቅርንጫፎች ዝርዝር" : "List of Branches"}
+                  </Link>
+                  <Link
+                    to="/faq"
+                    className="font-base hover:opacity-80 border border-white pb-2  text-gray-700"
+                  >
+                    {isAmh ? "ፋክስ" : "Faqs"}
+                  </Link>
+                </div>
+              </div>
+              <div className="hidden md:flex  flex-col  items-center justify-center group">
+                <div className="flex items-center space-x-1 hover:text-[#FDB913]">
+                  <h1 className="font-base text-gray-700 cursor-pointer">
+                    {isAmh ? "ግንዛቤዎች" : "Insights"}
+                  </h1>
+                  <BiChevronRight />
+                </div>
+                <div
+                  className="p-4 rounded-md absolute  bg-white shadow-lg top-12 z-50
+             hidden group-hover:flex group-hover:flex-col transition-all ease-out duration-300  "
+                >
+                  <Link
+                    to="/blogs"
+                    className="font-base hover:opacity-80 border border-white pb-2 border-b-orange-200 text-gray-700"
+                  >
+                    {isAmh ? "ዜና እና ማስታወቂያዎች" : "News & Anouncments"}
+                  </Link>
+                  <Link
+                    to="/publication"
+                    className="font-base hover:opacity-80 border border-white pb-2  text-gray-700"
+                  >
+                    {isAmh ? "የኩባንያ ህትመቶች" : "Company Publications"}
+                  </Link>
+                </div>
+              </div>
+              <Link to="/vacancies" className="font-base  text-gray-700">
+                {isAmh ? "ስራዎች" : "Vacancies"}
               </Link>
 
-              <p onClick={handleLogin} className="font-semibold text-gray-700  cursor-pointer">
+              <p
+                onClick={handleLogin}
+                className="font-base text-gray-700  cursor-pointer "
+              >
                 {!user && !token
                   ? isAmh
                     ? "ግባ"
-                    : "Login"
+                    : "Sign In / Sign Up"
                   : isAmh
                   ? "ውጣ"
                   : "Logout"}
               </p>
+
+              <button
+                onClick={() => navigate("/contact")}
+                className="hidden md:flex bg-[#FDB913] p-2 px-5 text-white rounded-sm font-medium"
+              >
+                {isAmh ? "አግኙን" : "Contact us"}
+              </button>
             </div>
-            <div className="flex space-x-2 items-center pr-2">
+
+            <div className="flex space-x-4 items-center pr-2">
               <Menu
                 menuButton={
                   <MenuButton>
-                    <AiFillSetting
-                      size={20}
-                      className="text-slate-800 cursor-pointer"
-                    />
+                    <p className="w-24 flex">
+                      <div className="p-1">
+                        <TbWorld />
+                      </div>
+                      {isAmh ? "English" : "አማርኛ"}
+                    </p>
                   </MenuButton>
                 }
                 transition
@@ -190,7 +279,7 @@ const Navbar = () => {
                       size={20}
                       className={!isAmh ? "text-blue-500" : "text-gray-200"}
                     />
-                    <h1 className="font-semibold ">English</h1>
+                    <h1 className="font-base ">English</h1>
                   </div>
                 </MenuItem>
                 <MenuItem>
@@ -204,41 +293,39 @@ const Navbar = () => {
                       size={20}
                       className={isAmh ? "text-blue-500" : "text-gray-200"}
                     />
-                    <h1 className="font-semibold">አማርኛ</h1>
+                    <h1 className="font-base">አማርኛ</h1>
                   </div>
                 </MenuItem>
-                {(user && token ) && <MenuItem>
-                  <div
-                    className="flex items-center space-x-1 cursor-pointer"
-                    onClick={() => {
-                      navigate('/profile')
-                    }}
-                  >
-                    <FaUser
-                      size={14}
-                      className={isAmh ? "text-blue-500" : "text-gray-200"}
-                    />
-                    <h1 className="font-semibold">Profile</h1>
-                  </div>
-                </MenuItem>}
+                {user && token && (
+                  <MenuItem>
+                    <div
+                      className="flex items-center space-x-1 cursor-pointer"
+                      onClick={() => {
+                        navigate("/profile");
+                      }}
+                    >
+                      <FaUser
+                        size={14}
+                        className={isAmh ? "text-blue-500" : "text-gray-200"}
+                      />
+                      <h1 className="font-base">Profile</h1>
+                    </div>
+                  </MenuItem>
+                )}
               </Menu>
 
-              <button
-                onClick={() => navigate("/contact")}
-                className="hidden md:flex bg-[#FAD03C] p-2 px-5 text-white rounded-sm font-medium"
-              >
-               {isAmh ? 'አግኙን' :'Contact us'}
-              </button>
               <FaBars className="flex lg:hidden " size={23} onClick={toggle} />
             </div>
           </div>
         </div>
       </header>
       <LoginModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-      <DropDown isOpen={isOpen} 
-      toggle={toggle} 
-      setIsModalOpen={setIsModalOpen}
-      setIsOpen={setIsOpen}/>
+      <DropDown
+        isOpen={isOpen}
+        toggle={toggle}
+        setIsModalOpen={setIsModalOpen}
+        setIsOpen={setIsOpen}
+      />
     </>
   );
 };

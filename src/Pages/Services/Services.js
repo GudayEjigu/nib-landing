@@ -58,7 +58,7 @@ const Services = () => {
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
-          <h1 className="text-white text-center font-bold text-2xl py-5 md:text-4xl">
+          <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
             {isAmh ? 'አገልግሎቶች'  :'SERVICES'}
           </h1>
           <p className="text-sm font-light text-white">{isAmh ? ' ቤት/አገልግሎቶች':'HOME/SERVICES'}</p>
@@ -68,14 +68,14 @@ const Services = () => {
       {/*  */}
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 h-full z-40 hidden md:flex">
-          <img src={bodyone} alt="" className="h-full object-contain" />
+          <img src={bodyone} alt="" className="h-full object-contain opacity-20" />
         </div>
         <div className="absolute right-0 top-0 bottom-0 h-full z-40 hidden md:flex">
-          <img src={bodytwo} alt="" className="h-full object-contain" />
+          <img src={bodytwo} alt="" className="h-full object-contain opacity-20" />
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-2xl md:text-4xl font-bold text-center pt-10">
-            {isAmh ? 'የእኛ አገልግሎቶች' :'our services'}
+          <h1 className="text-2xl md:text-4xl font-semiBold text-center pt-10">
+            {isAmh ? 'የእኛ አገልግሎቶች' :'Our services'}
           </h1>
           <p></p>
         </div>
@@ -92,11 +92,11 @@ const Services = () => {
               <div key={item?.id}
                  className="bg-white relative p-3 z-40 rounded-lg shadow-lg flex flex-col items-center justify-center">
                    <img  src={item.service_photo} alt="" className="h-36" />
-                   <h1 className="text-xl text-center font-bold text-black ">{isAmh ? item.title?.amharic :item.title?.english}</h1>
+                   <h1 className="text-xl text-center font-semiBold text-black ">{isAmh ? item.title?.amharic :item.title?.english}</h1>
                    <p className="text-sm text-center line-clamp-2">{ReactHtmlParser(isAmh ? item.body.amharic : item.body?.english)}</p>
                        <h4 
                         onClick={() => navigate(`/services/detail/${item.id}`)}
-                       className="cursor-pointer hover:opacity-70  bottom-0  font-bold  text-[#AC7729]">
+                       className="cursor-pointer hover:opacity-70  bottom-0  font-semiBold  text-[#AC7729]">
                           {isAmh ? 'ተጨማሪ ያንብቡ' :'Learn more'}
                        </h4>
                  </div>

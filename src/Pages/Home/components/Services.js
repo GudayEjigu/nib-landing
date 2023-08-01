@@ -36,14 +36,14 @@ const Services = () => {
   console.log(serviceData?.data?.data?.data)
   return (
     <div className="relative pt-14">
-         <div className='absolute left-0 top-0 bottom-0 h-full z-10 hidden md:flex'>
+         <div className='absolute left-0 top-0 bottom-0 h-full z-10 hidden md:flex opacity-20'>
          <img src={bodyone} alt=""className='h-full object-contain' />
       </div>
-      <div className='absolute right-0 top-0 bottom-0 h-full z-10 hidden md:flex'>
+      <div className='absolute right-0 top-0 bottom-0 h-full z-10 hidden md:flex opacity-20'>
          <img src={bodytwo} alt=""className='h-full object-contain' />
       </div>
       <div className="flex  flex-col items-center justify-center space-y-1">
-        <h1 className="font-bold text-4xl text-center ">{isAmh ? 'የእኛ አገልግሎቶች' :'Our Services'}</h1>
+        <h1 className="font-semiBold text-4xl text-center ">{isAmh ? 'የእኛ አገልግሎቶች' :'Our Services'}</h1>
         <p className="text-sm text-center">
          {isAmh ?  'የእኛ ህይወት እና ህይወት ነክ ያልሆኑ የኢንሹራንስ አገልግሎቶች አንደኛ ደረጃ፣ ከፍተኛ ጥራት ያላቸው እና የተለያዩ ናቸው።' :' Our life and non-life insurance services are first-class,high-quality, and diverse.'}
         </p>
@@ -51,7 +51,7 @@ const Services = () => {
 
       <div className="max-w-6xl mx-auto">
         <div className=" flex -items-center justify-between pt-3 m-2 ">
-          <h3 className="text-xl md:text-2xl font-bold text-black px-3 sm:px-0">
+          <h3 className="text-xl md:text-2xl font-semiBold text-black px-3 sm:px-0">
             {isAmh ?  'የሕይወት ያልሆነ ኢንሹራንስ' :'Non-Life Insurance'}
           </h3>
 
@@ -72,11 +72,11 @@ const Services = () => {
                  <div key={item?.id}
                  className="bg-white relative p-3 z-40 rounded-lg shadow-lg flex flex-col items-center justify-center">
                    <img  src={item.service_photo} alt="" className="h-36" />
-                   <h1 className="text-xl font-bold text-black ">{isAmh ? item.title?.amharic :item.title?.english}</h1>
+                   <h1 className="text-xl font-semiBold text-black ">{isAmh ? item.title?.amharic :item.title?.english}</h1>
                    <p className="text-sm text-center pb-14">{parse(isAmh ? item.body.amharic : item.body?.english)}</p>
                        <h4 
                           onClick={() => navigate(`/services/detail/${item.id}`)}
-                       className="cursor-pointer hover:opacity-70 absolute bottom-0 my-5 font-bold  text-[#AC7729] pt-5">
+                       className="cursor-pointer hover:opacity-70 absolute bottom-0 my-5 font-semiBold  text-[#AC7729] pt-5">
                        {isAmh ? 'ተጨማሪ ያንብቡ' :'Learn more'}
                        </h4>
                  </div>
@@ -102,7 +102,7 @@ const Services = () => {
       {/* life insurance */}
       <div className="max-w-6xl mx-auto pt-5">
         <div className=" flex -items-center justify-between pt-3 m-2 ">
-          <h3 className="text-xl md:text-2xl font-bold text-black px-3 sm:px-0">
+          <h3 className="text-xl md:text-2xl font-semiBold text-black px-3 sm:px-0">
           {isAmh ?  'የሕይወት ኢንሹራንስ' :'Life Insurance'}
           </h3>
 
@@ -121,11 +121,11 @@ const Services = () => {
                  <div key={item?.id}
                  className="bg-white relative p-3 z-40 rounded-lg shadow-lg flex flex-col items-center justify-center">
                    <img  src={item.service_photo} alt="" className="h-36" />
-                   <h1 className="text-xl font-bold text-black ">{isAmh ? item.title?.amharic :item.title?.english}</h1>
+                   <h1 className="text-xl font-semiBold text-black ">{isAmh ? item.title?.amharic :item.title?.english}</h1>
                    <p className="text-sm text-center pb-14">{parse(isAmh ? item.body.amharic : item.body?.english)}</p>
                        <h4 
                          onClick={() => navigate(`/services/detail/${item.id}`)}
-                       className="cursor-pointer hover:opacity-70 absolute bottom-0 my-5 font-bold  text-[#AC7729] pt-5">
+                       className="cursor-pointer hover:opacity-70 absolute bottom-0 my-5 font-semiBold  text-[#AC7729] pt-5">
                          {isAmh ? 'ተጨማሪ ያንብቡ' :'Learn more'}
                        </h4>
                  </div>

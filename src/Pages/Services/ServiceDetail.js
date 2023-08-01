@@ -56,7 +56,7 @@ const ServiceDetail = () => {
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
-          <h1 className="text-white text-center font-bold text-2xl py-5 md:text-4xl">
+          <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
            {isAmh ? 'የአገልግሎት ዝርዝር' :' SERVICE DETAIL'}
           </h1>
           <p className="text-sm font-light text-white">{isAmh ? 'ቤት/የአገልግሎት ዝርዝር' :'HOME/SERVICE DETAIL'}</p>
@@ -68,14 +68,14 @@ const ServiceDetail = () => {
 <div className="max-w-3xl">
 {/* <button onClick={()=>navigate('/services')}
 className="border border-gray-400 rounded-md p-3">Back</button> */}
-   <h1 className="text-gray-700 text-center font-bold text-2xl py-5 md:text-4xl">
+   <h1 className="text-gray-700 text-center font-semiBold text-2xl py-5 md:text-4xl">
            {isAmh ? 'የአገልግሎት ዝርዝር' :' SERVICE DETAIL'}
           </h1>
 <div className="bg-white p-3 rounded-md shadow-md">
   {serviceDetails.isFetched ? (
         <div className="flex flex-col items-start space-y-2">
-  <h1 className="font-semibold text-xl capitalize line-clamp-2">
-           <span className="font-semibold text-xl"> {isAmh ? serviceDetails?.data?.data?.data?.Detail?.title?.amharic : serviceDetails?.data?.data?.data?.Detail?.title?.english}</span>
+  <h1 className="font-semiBold text-xl capitalize line-clamp-2">
+           <span className="font-semiBold text-xl"> {isAmh ? serviceDetails?.data?.data?.data?.Detail?.title?.amharic : serviceDetails?.data?.data?.data?.Detail?.title?.english}</span>
           </h1>
           <p className=" "> {parse(isAmh ? serviceDetails?.data?.data?.data?.Detail?.body?.amharic : serviceDetails?.data?.data?.data?.Detail?.body?.english)}
           </p>

@@ -19,7 +19,7 @@ const Contact = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 p-3 gap-3">
           <div className="flex items-start space-y-1 flex-col">
-            <h1 className="text-2xl md:text-3xl font-bold">
+            <h1 className="text-2xl md:text-3xl font-semiBold">
              {isAmh ?   'ለማንኛውም ጥያቄ መልእክቱን ይላኩለን' :' DROP US MESSAGE FOR ANY QUERY'}
             </h1>
          
