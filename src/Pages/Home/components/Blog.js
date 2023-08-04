@@ -54,14 +54,14 @@ const Blog = () => {
           {isAmh ? "ብሎጎች" : "Our Blog"}
         </h1>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 z-40">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 z-40">
           {blogsData.isFetched ? (
             blogsData?.data?.data?.data?.map((item) => (
               <div
                 onClick={() => navigate(`/blogs/${item.id}`)}
                 key={item?.id}
                 className="bg-white p-3 flex flex-col items-start space-y-1 z-30
-            rounded-md shadow-lg cursor-pointer hover:scale-[1.03] transition ease-in-out duration-500"
+            rounded-md shadow-2xl cursor-pointer hover:scale-[1.03] transition ease-in-out duration-500"
               >
                 <img
                   src={item.blog_photo}
@@ -78,8 +78,9 @@ const Blog = () => {
                   {isAmh ? item.title.amharic : item.title.english}
                 </h1>
                 <p className="text-sm line-clamp-2">
-                  
-                  {ReactHtmlParser(isAmh ? item.body.amharic : item.body.english)}
+                  {ReactHtmlParser(
+                    isAmh ? item.body.amharic : item.body.english
+                  )}
                 </p>
               </div>
             ))

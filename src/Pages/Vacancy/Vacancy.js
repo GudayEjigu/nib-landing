@@ -89,7 +89,7 @@ const Vacancy = () => {
                 <div
                   onClick={() => navigate(`/vacancies/${item.id}`)}
                   className="flex flex-col items-start space-y-1 bg-white 
-                p-3 shadow-lg rounded-md cursor-pointer hover:scale-[1.03] duration-300 transition-all ease-out"
+                p-3 shadow-2xl rounded-md cursor-pointer hover:scale-[1.03] duration-300 transition-all ease-out"
                 >
                   <h1 className="font-medium text-lg text-gray-700">
                     Title: <span className=" text-base">{item.title}</span>

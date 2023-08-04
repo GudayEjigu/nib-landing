@@ -104,7 +104,7 @@ const MainBranch = () => {
             // experimentalFeatures={{ newEditingApi: true }}
           /> */}
           {departments?.map((item) => (
-            <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
+            <div className="bg-white p-3 rounded-md shadow-2xl flex flex-col items-center justify-center">
               <img src={car} className="h-20" alt="" />
               <h1 className="font-bold text-lg text-center text-gray-800">
                 {isAmh ? item.name.amharic : item.name.english}

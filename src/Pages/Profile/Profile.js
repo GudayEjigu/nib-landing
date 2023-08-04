@@ -112,7 +112,7 @@ const Profile = () => {
                 </h2>
                 <div className="grid grid-cols-1 md grid-cols-3 gap-3 ">
                   {profileData?.data?.data?.policies?.map((item) => (
-                    <div className="relative flex cursor-pointer items-center space-x-2 bg-white  rounded-md shadow-lg">
+                    <div className="relative flex cursor-pointer items-center space-x-2 bg-white  rounded-md shadow-2xl">
                       <div className="bg-red-500 w-5 h-full" />
                       <div className="py-5 px-2">
                         <h1 className="text-sm font-medium">

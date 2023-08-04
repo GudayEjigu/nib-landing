@@ -105,7 +105,7 @@ const Navbar = () => {
                   <BiChevronRight />
                 </div>
                 <div
-                  className="p-4 rounded-md absolute  bg-white shadow-lg top-12 z-50
+                  className="p-4 rounded-md absolute  bg-white shadow-2xl top-12 z-50
              hidden group-hover:flex group-hover:flex-col transition-all ease-out duration-300  "
                 >
                   <div className="flex flex-col space-y-1 ">
@@ -168,7 +168,7 @@ const Navbar = () => {
                   <BiChevronRight />
                 </div>
                 <div
-                  className="p-4 rounded-md absolute  bg-white shadow-lg top-12 z-50
+                  className="p-4 rounded-md absolute  bg-white shadow-2xl top-12 z-50
              hidden group-hover:flex group-hover:flex-col transition-all ease-out duration-300   "
                 >
                   <Link
@@ -199,7 +199,7 @@ const Navbar = () => {
                     to="/faq"
                     className="font-base hover:opacity-80 border border-white pb-2  text-gray-700"
                   >
-                    {isAmh ? "ፋክስ" : "Faqs"}
+                    {isAmh ? "ፋክስ" : "FAQs"}
                   </Link>
                 </div>
               </div>
@@ -211,7 +211,7 @@ const Navbar = () => {
                   <BiChevronRight />
                 </div>
                 <div
-                  className="p-4 rounded-md absolute  bg-white shadow-lg top-12 z-50
+                  className="p-4 rounded-md absolute  bg-white shadow-2xl top-12 z-50
              hidden group-hover:flex group-hover:flex-col transition-all ease-out duration-300  "
                 >
                   <Link

@@ -108,7 +108,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex flex-col items-left md:items-center">
-              <h1 className="font-semiBold text-xl py-2 underline">
+              <h1 className="font-bold text-lg py-2 underline">
                 {isAmh ? "ፈጣን ማገናኛዎች" : "QUICK LINKS"}
               </h1>
               <div className="grid grid-cols-1 pl-8 gap-3">
@@ -204,16 +204,16 @@ const Footer = () => {
                     >
                       {isAmh ? "ስራዎች" : "Vacancies"}
                     </Link>
+                    <p>
                     <Link
                       to="/contact"
                       className="font-xs hover:opacity-80 text-white "
                     >
                       {isAmh ? "አግኙን" : "Contact us"}
                     </Link>
-                    <LoginModal
-                      isModalOpen={isModalOpen}
-                      setIsModalOpen={setIsModalOpen}
-                    />
+                      </p>
+                      
+                    
                     <p
                       onClick={handleLogin}
                       className="font-xs hover:opacity-80 text-white "
@@ -238,20 +238,24 @@ const Footer = () => {
                         ? "ውጣ"
                         : "Logout"}
                     </p>
+                    <LoginModal
+                      isModalOpen={isModalOpen}
+                      setIsModalOpen={setIsModalOpen}
+                    />
                   </div>
                 </div>
               </div>
             </div>
             {/* contact */}
             <div>
-              <h1 className="font-semiBold text-xl py-2 pt-10 md:pt-2">
+              <h1 className="font-bold underline text-lg py-2 pt-10 md:pt-2">
                 {isAmh ? "የመገኛ አድራሻ" : "CONTACT INFO"}
               </h1>
-              <h4 className="font-xs text-lg pb-2">
+              <h4 className="font-xs  pb-2">
                 {isAmh ? "ዋና መስሪያ ቤት" : "HEAD OFFICE"}
               </h4>
               <div className="flex flex-col items-start space-y-1">
-                <p className="text-sm pb-2">
+                <p className=" pb-2">
                   <span className="font-xs">
                     {isAmh ? "አካባቢ" : "Location"}:
                   </span>{" "}
@@ -261,25 +265,25 @@ const Footer = () => {
                     : `Addis Ababa -
                   Ethiopia Dembel City Center - Second Floor`}
                 </p>
-                <p className="text-sm pb-2">
+                <p className=" pb-2">
                   <span className="font-xs">{isAmh ? "ኢሜይል" : "Email"}:</span>
                   info@nibinsurancethiopia.com
                 </p>
-                <p className="text-sm pb-2">
+                <p className=" pb-2">
                   <span className="font-xs">{isAmh ? "ስልክ" : "Phone"}:</span>
                   552 81 95/96, 553 51 29-32, 554 37 05
                 </p>
-                <p className="text-sm pb-2">
+                <p className=" pb-2">
                   <span className="font-xs">
                     {isAmh ? "ፖ.ሳ. ቁ" : "P.O.Box"}:
                   </span>
                   285
                 </p>
-                <p className="text-sm pb-2">
+                <p className=" pb-2">
                   <span className="font-xs"> {isAmh ? "ፋክስ" : "Fax"}</span>
                   Fax: +1-212-9876543
                 </p>
-                <p className="text-sm pb-2pb-2">
+                <p className=" pb-2pb-2">
                   <span className="font-xs"> Fax:</span>
                   Fax: +1-212-9876543
                 </p>

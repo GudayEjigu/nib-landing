@@ -52,7 +52,7 @@ const Publication = () => {
       },
     }
   );
-console.log(publicationDataDatas?.data?.data?.data)
+  console.log(publicationDataDatas?.data?.data?.data);
   const publicationCategoryDataDatas = useQuery(
     ["publicationCategoryDataApi"],
     async () =>
@@ -104,8 +104,10 @@ console.log(publicationDataDatas?.data?.data?.data)
               </h1>
               <div className="max-w-6xl mx-auto w-full flex items-center space-x-2 overflow-x-scroll ">
                 {publicationCategoryDataDatas?.data?.data?.data?.map((item) => (
-                  <button onClick={() => setPublicationId(item.id)}
-                  className="bg-[#a27128] p-2 w-fit flex flex-shrink-0 font-medium text-white rounded-md  ">
+                  <button
+                    onClick={() => setPublicationId(item.id)}
+                    className="bg-[#a27128] p-2 w-fit flex flex-shrink-0 font-medium text-white rounded-md  "
+                  >
                     {" "}
                     {isAmh ? item.name.amharic : item.name.english}
                   </button>
@@ -117,10 +119,18 @@ console.log(publicationDataDatas?.data?.data?.data)
       </div>
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 h-full z-10 hidden md:flex">
-          <img src={bodyone} alt="" className="h-full  object-cover opacity-20" />
+          <img
+            src={bodyone}
+            alt=""
+            className="h-full  object-cover opacity-20"
+          />
         </div>
         <div className="absolute right-0 top-0 bottom-0 h-full z-10 hidden md:flex">
-          <img src={bodytwo} alt="" className="h-full object-contain opacity-20" />
+          <img
+            src={bodytwo}
+            alt=""
+            className="h-full object-contain opacity-20"
+          />
         </div>
         {/* <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 p-3 z-40">
           <div>
@@ -138,7 +148,7 @@ console.log(publicationDataDatas?.data?.data?.data)
               {publicationDataDatas?.data?.data?.data?.map((item) => (
                 <div
                   key={item.id}
-                  className="w-full  flex flex-col items-center py-2 justify-center space-y-2 bg-white shadow-lg rounded-md relative"
+                  className="w-full  flex flex-col items-center py-2 justify-center space-y-2 bg-white shadow-2xl rounded-md relative"
                 >
                   <BsFillFilePdfFill size={100} className="text-red-500" />
                   <h1 className="pb-12 font-medium">

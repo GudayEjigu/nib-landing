@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLang } from "../../context/lang";
 import { ThreeDots } from "react-loader-spinner";
 import { useQuery } from "react-query";
-import car from "../../assets/car.png";
+import nibLogo from "../../assets/NibLogo.png";
 import axios from "axios";
 import { DataGrid } from "@mui/x-data-grid";
 const OutlyingBranches = () => {
@@ -93,8 +93,8 @@ const OutlyingBranches = () => {
         experimentalFeatures={{ newEditingApi: true }}
       /> */}
               {addisBranches?.map((item) => (
-                <div className="bg-white p-3 rounded-md shadow-lg flex flex-col items-center justify-center">
-                  <img src={car} className="h-20" alt="" />
+                <div className="bg-white p-3 rounded-md shadow-2xl flex flex-col items-center justify-center">
+                  <img src={nibLogo} className="h-20" alt="" />
                   <h1 className="font-bold text-xl text-gray-800">
                     {isAmh ? item.name.amharic : item.name.english}
                   </h1>

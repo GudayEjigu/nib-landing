@@ -4,8 +4,8 @@ import { Disclosure } from "@headlessui/react";
 import { BiChevronUp } from "react-icons/bi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { Spinner } from "@chakra-ui/react";
-import bodyone from "../../assets/bodyone.png";
-import bodytwo from "../../assets/bodytwo.png";
+import bodyone from "../../assets/LeftFrame.png";
+import bodytwo from "../../assets/RightFrame.png";
 import car from "../../assets/car.png";
 import two from "../../assets/five.png";
 import { useLang } from "../../context/lang";
@@ -25,6 +25,12 @@ const Branches = () => {
       }
   return (
     <div>
+      <div className="absolute left-0 top-0 bottom-0 h-full z-40 hidden md:flex ">
+        <img src={bodyone} alt="" className="h-full object-contain" />
+      </div>
+      <div className="absolute right-0 top-0 bottom-0 h-full z-40 hidden md:flex ">
+        <img src={bodytwo} alt="" className="h-full object-contain" />
+      </div>
           <div
         style={{
           backgroundImage: `url(${two})`,
@@ -36,6 +42,7 @@ const Branches = () => {
           position: "relative",
         }}
       >
+          
         <div className="absolute inset-0 bg-black/40" />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
           <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">

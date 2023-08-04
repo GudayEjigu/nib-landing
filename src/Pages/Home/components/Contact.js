@@ -5,7 +5,7 @@ const Contact = () => {
   const { isAmh } = useContext(LangContext);
 
   return (
-    <div className="py-3">
+    <div className="pt-20">
       <div
         style={{
           backgroundImage: `url(${contacts})`,

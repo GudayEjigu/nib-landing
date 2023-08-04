@@ -5,6 +5,7 @@ import { Spinner } from "@chakra-ui/react";
 import one from "../../../assets/one.png";
 import two from "../../../assets/two.png";
 import magnify from "../../../assets/magnify.png";
+import handHeart from "../../../assets/handHeart.png";
 import target from "../../../assets/target.png";
 import tick from "../../../assets/tick.png";
 import bodyone from "../../../assets/bodyone.png";
@@ -137,13 +138,13 @@ const About = () => {
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 bg-white  rounded-lg p-5">
           <div className="py-2">
-            <img src={magnify} />
+            <img src={handHeart} />
             <h1 className="font-semiBold text-xl pt-2 ">
               {isAmh ? "እሴቶች" : "Our Values"}
             </h1>
             <div className="w-10 bg-[#FDB913] h-[2px]" />
           </div>
-          <p className="text-sm text-justify  grid lg:grid-cols-2 lg:gap-12">
+          <p className="text-sm   grid lg:grid-cols-2 lg:gap-12">
             <div className="flex ">
               <div className="lg:flex flex-col px-4 hidden ">
                 <p className="pb-5">

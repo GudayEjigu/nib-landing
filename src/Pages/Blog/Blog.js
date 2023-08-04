@@ -130,7 +130,7 @@ const Blog = () => {
                     onClick={() => navigate(`/blogs/${item.id}`)}
                     key={item?.id}
                     className="bg-white p-3 flex flex-col items-start space-y-1 z-30 w-full
-            rounded-md shadow-lg cursor-pointer hover:scale-[1.03] transition ease-in-out duration-500"
+            rounded-md shadow-2xl cursor-pointer hover:scale-[1.03] transition ease-in-out duration-500"
                   >
                     <img
                       src={item.blog_photo}

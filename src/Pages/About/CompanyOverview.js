@@ -11,8 +11,8 @@ import { LangContext } from "../../context/LangContext";
 import axios from "axios";
 import ReactHtmlParser from "react-html-parser"
 import Abouts from "../Home/components/About";
-import bodyone from "../../assets/bodyone.png";
-import bodytwo from "../../assets/bodytwo.png";
+import bodyone from "../../assets/LeftFrame.png";
+import bodytwo from "../../assets/RightFrame.png";
 const CompanyOverview = () => {
   const navigate = useNavigate();
   const {isAmh} =useContext(LangContext);
@@ -116,6 +116,21 @@ const CompanyOverview = () => {
           <p className="text-sm font-light  text-white">{isAmh ? 'ቤት/ስለ እኛ' :'HOME/About'}</p>
         </div>
       </div>
+      <div className="absolute left-0 top-0 bottom-0   z-40  hidden md:flex">
+          <img
+            src={bodyone}
+            alt=""
+            className="h-full object-contain  "
+          />
+        </div>
+       
+        <div className="absolute right-0 top-0  bottom-0  hidden md:flex">
+          <img
+            src={bodytwo}
+            alt=""
+            className="h-full object-contain  "
+          />
+        </div>
       {/*  */}
       <Abouts />
 
@@ -137,15 +152,26 @@ const CompanyOverview = () => {
         {isAmh ? 'መልእክት ከቦርድ ሰብሳቢ' :'MESSAGE FROM BOARD CHAIRMAN'}
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-5 max-w-6xl mx-auto items-start" >
-          <div className="flex items-end justify-end">
-            <img  src={chairmanMessageData?.data?.data?.data?.media[0]?.original_url } alt="" className="h-[500px]" />
+        <div className="grid grid-cols-1 md:grid-cols-1  max-w-6xl mx-auto items-start" >
+          <div className="flex items-right justify-start">
+            <div className="md:flex">
+              <div className="flex justify-start md:w-[200%]  ">
+                
+            <img  src={chairmanMessageData?.data?.data?.data?.media[0]?.original_url } alt="" className="h-[390px] " />
+              </div>
+            <div className="">
+            <h1 className="font-semiBold text-xl  ">{isAmh ? null : chairmanMessageData?.data?.data?.data?.title?.english}</h1>
+            <p className="text-sm">
+            {ReactHtmlParser(isAmh ? null : chairmanMessageData?.data?.data?.data?.description?.english.slice(0,1780))}
+            </p>
+            </div>
+            </div>
           </div>
           {/* second grid */}
           <div className="flex flex-col text-start space-y-3">
-            <h1 className="font-semiBold text-xl  ">{isAmh ? chairmanMessageData?.data?.data?.data?.title?.amharic : chairmanMessageData?.data?.data?.data?.title?.english}</h1>
+            <h1 className="font-semiBold text-xl  ">{isAmh ? chairmanMessageData?.data?.data?.data?.title?.amharic : null}</h1>
             <p className="text-sm">
-            {ReactHtmlParser(isAmh ? chairmanMessageData?.data?.data?.data?.description?.amharic : chairmanMessageData?.data?.data?.data?.description?.english)}
+            {ReactHtmlParser(isAmh ? chairmanMessageData?.data?.data?.data?.description?.amharic : chairmanMessageData?.data?.data?.data?.description?.english.slice(1780))}
             </p>
           </div>
         </div>

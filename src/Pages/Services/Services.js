@@ -8,8 +8,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import Moment from "react-moment";
 import BlockContent from "@sanity/block-content-to-react";
 import { useHomeContext } from "../../context/HomeContext";
-import bodyone from "../../assets/bodyone.png";
-import bodytwo from "../../assets/bodytwo.png";
+import bodyone from "../../assets/LeftFrame.png";
+import bodytwo from "../../assets/RightFrame.png";
 import { useLang } from "../../context/lang";
 import axios from "axios";
 import { useQuery } from "react-query";
@@ -59,23 +59,33 @@ const Services = () => {
         <div className="absolute inset-0 bg-black/40" />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
           <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
-            {isAmh ? 'አገልግሎቶች'  :'SERVICES'}
+            {isAmh ? "አገልግሎቶች" : "SERVICES"}
           </h1>
-          <p className="text-sm font-light text-white">{isAmh ? ' ቤት/አገልግሎቶች':'HOME/SERVICES'}</p>
+          <p className="text-sm font-light text-white">
+            {isAmh ? " ቤት/አገልግሎቶች" : "HOME/SERVICES"}
+          </p>
         </div>
       </div>
 
       {/*  */}
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 h-full z-40 hidden md:flex">
-          <img src={bodyone} alt="" className="h-full object-contain opacity-20" />
+          <img
+            src={bodyone}
+            alt=""
+            className="h-full object-contain "
+          />
         </div>
         <div className="absolute right-0 top-0 bottom-0 h-full z-40 hidden md:flex">
-          <img src={bodytwo} alt="" className="h-full object-contain opacity-20" />
+          <img
+            src={bodytwo}
+            alt=""
+            className="h-full object-contain "
+          />
         </div>
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-2xl md:text-4xl font-semiBold text-center pt-10">
-            {isAmh ? 'የእኛ አገልግሎቶች' :'Our services'}
+            {isAmh ? "የእኛ አገልግሎቶች" : "Our services"}
           </h1>
           <p></p>
         </div>
@@ -89,21 +99,29 @@ const Services = () => {
         <div className="max-w-6xl mx-auto p-3 grid grid-cols-1 md:grid-cols-3 gap-3 ">
           {servicesData.isFetched ? (
             servicesData?.data?.data?.data?.map((item) => (
-              <div key={item?.id}
-                 className="bg-white relative p-3 z-40 rounded-lg shadow-lg flex flex-col items-center justify-center">
-                   <img  src={item.service_photo} alt="" className="h-36" />
-                   <h1 className="text-xl text-center font-semiBold text-black ">{isAmh ? item.title?.amharic :item.title?.english}</h1>
-                   <p className="text-sm text-center line-clamp-2">{ReactHtmlParser(isAmh ? item.body.amharic : item.body?.english)}</p>
-                       <h4 
-                        onClick={() => navigate(`/services/detail/${item.id}`)}
-                       className="cursor-pointer hover:opacity-70  bottom-0  font-semiBold  text-[#AC7729]">
-                          {isAmh ? 'ተጨማሪ ያንብቡ' :'Learn more'}
-                       </h4>
-                 </div>
+              <div
+                key={item?.id}
+                className="bg-white relative p-3 z-40 rounded-lg shadow-2xl flex flex-col items-center justify-center"
+              >
+                <img src={item.service_photo} alt="" className="h-36" />
+                <h1 className="text-xl text-center font-semiBold text-black ">
+                  {isAmh ? item.title?.amharic : item.title?.english}
+                </h1>
+                <p className="text-sm text-center line-clamp-2">
+                  {ReactHtmlParser(
+                    isAmh ? item.body.amharic : item.body?.english
+                  )}
+                </p>
+                <h4
+                  onClick={() => navigate(`/services/detail/${item.id}`)}
+                  className="cursor-pointer hover:opacity-70  bottom-0  font-semiBold  text-[#AC7729]"
+                >
+                  {isAmh ? "ተጨማሪ ያንብቡ" : "Learn more"}
+                </h4>
+              </div>
             ))
-            ) : (
-              <div className="flex items-center justify-center w-full py-10">
-             
+          ) : (
+            <div className="flex items-center justify-center w-full py-10">
               <ThreeDots
                 height="80"
                 width="80"

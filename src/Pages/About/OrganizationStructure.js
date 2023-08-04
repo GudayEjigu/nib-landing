@@ -135,7 +135,7 @@ const OrganizationStructure = () => {
           <h1 className="font-semiBold text-4xl text-center pb-10">
             {isAmh ?  'ድርጅታዊ መዋቅር' :'ORGANIZATIONAL STRUCTURE'}
           </h1>
-          <div className="flex flex-col items-start space-y-2 max-w-sm ">
+          <div className="flex flex-col items-start space-y-2  ">
             <h3 className="font-semiBold text-lg ">{isAmh ?  'የኩባንያው መዋቅር' :'Company Structure'}</h3>
             <p className=" text-left ">
             {isAmh ? aboutDatas?.data?.data?.data?.company_structure?.amharic : aboutDatas?.data?.data?.data?.company_structure?.english}

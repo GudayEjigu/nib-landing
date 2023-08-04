@@ -99,18 +99,20 @@ const Faq = () => {
             {isAmh ? "የሚጠየቁ ጥያቄዎች" : "FAQs"}
           </h1>
           {faqDataDatas.isFetched ? (
-            <div className="w-full  ">
+            <div className="w-full   ">
               {faqDataDatas?.data?.data?.data?.data?.map((item) => (
-                <div key={item.id} className="w-full  ">
+                <div key={item.id} className="  ">
                   <Accordion allowZeroExpanded className="">
                     <AccordionItem>
                       <AccordionItemHeading>
                         <AccordionItemButton>
-                          {parse(
-                            isAmh
-                              ? item.question.amharic
-                              : item.question.english
-                          )}
+                          
+                            {parse(
+                              isAmh
+                                ? item.question.amharic
+                                : item.question.english.slice(3))
+                            }
+                          
                         </AccordionItemButton>
                       </AccordionItemHeading>
                       <AccordionItemPanel>

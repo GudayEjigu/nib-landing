@@ -8,7 +8,7 @@ const Why = () => {
   const { isAmh } = useContext(LangContext);
   return (
     <div>
-      <img src={footer} />
+      <div className="m-20"></div>
       <div className=" grid grid-cols-1 md:grid-cols-2 ">
         <div>
           <img src={Whys} className="h-[384px] w-full object-cover" />

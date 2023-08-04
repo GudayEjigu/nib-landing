@@ -68,21 +68,21 @@ const Client = () => {
           )} */}
           <div>
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3">
-              <div className="bg-white shadow-lg rounded-lg p-5">
+              <div className="bg-white shadow-2xl rounded-lg p-5">
                 <div className="py-2">
                   <h1 className="font-bold text-xl ">CREATE ACCOUNT</h1>
                   <div className="w-10 bg-[#FDB913] h-[2px]" />
                 </div>
                 <p className="text-sm"> </p>
               </div>
-              <div className="bg-white shadow-lg rounded-lg p-5">
+              <div className="bg-white shadow-2xl rounded-lg p-5">
                 <div className="py-2">
                   <h1 className="font-bold text-xl ">By signing up</h1>
                   <div className="w-10 bg-[#FDB913] h-[2px]" />
                 </div>
                 <p className="text-sm"></p>
               </div>
-              <div className="bg-white shadow-lg rounded-lg p-5">
+              <div className="bg-white shadow-2xl rounded-lg p-5">
                 <div className="py-2">
                   <h1 className="font-bold text-xl ">
                     {isAmh ? "እሴቶች" : "Our Values"}
