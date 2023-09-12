@@ -133,7 +133,7 @@ const MainBranch = () => {
           {departmentsDatas?.data?.data?.data?.prev_page_url !== null && (
             <button
               onClick={() => setPage((prev) => prev - 1)}
-              className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
+              className="bg-[#FFB300] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
             >
               Previous
@@ -142,7 +142,7 @@ const MainBranch = () => {
           {departmentsDatas?.data?.data?.data?.next_page_url !== null && (
             <button
               onClick={() => setPage((prevPage) => prevPage + 1)}
-              className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
+              className="bg-[#FFB300] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
             >
               Next

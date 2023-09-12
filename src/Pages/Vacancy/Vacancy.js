@@ -52,7 +52,7 @@ const Vacancy = () => {
           position: "relative",
         }}
       >
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 " />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
           <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
             {isAmh ? "ክፍት የስራ ቦታዎች" : "Vacancies"}
@@ -78,7 +78,7 @@ const Vacancy = () => {
           />
         </div>
         <div>
-          <h1 className=" text-center font-semiBold text-2xl py-5 md:text-4xl">
+          <h1 className=" text-center font-medium  text-[#661F00] text-2xl py-5 md:text-4xl">
             {isAmh ? "ክፍት የስራ ቦታዎች" : "Vacancies"}
           </h1>
         </div>
@@ -113,7 +113,7 @@ const Vacancy = () => {
               {vacancyDataDatas?.data?.data?.data?.prev_page_url !== null && (
                 <button
                   onClick={() => setPage((prev) => prev - 1)}
-                  className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
+                  className="bg-[#FFB300] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                 >
                   Previous
@@ -122,7 +122,7 @@ const Vacancy = () => {
               {vacancyDataDatas?.data?.data?.data?.next_page_url !== null && (
                 <button
                   onClick={() => setPage((prev) => prev + 1)}
-                  className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
+                  className="bg-[#FFB300] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                 >
                   Next

@@ -50,7 +50,7 @@ const Blog = () => {
         />
       </div>
       <div>
-        <h1 className="text-[#AC7729] text-center font-semiBold text-2xl py-5 md:text-4xl">
+        <h1 className="text-[#661F00] text-center font-semiBold text-2xl py-5 md:text-4xl">
           {isAmh ? "ብሎጎች" : "Our Blog"}
         </h1>
 

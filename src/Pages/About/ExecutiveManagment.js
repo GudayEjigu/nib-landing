@@ -67,69 +67,15 @@ const ExecutiveManagment = () => {
     }
   );
   console.log(managementData?.data?.data);
-  const orderOne = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 1 && item.type === "Top Managment"
-  );
-  const orderTwo = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 2 && item.type === "Top Managment"
-  );
-  const orderThree = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 3 && item.type === "Top Managment"
-  );
-  const orderFour = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 4 && item.type === "Top Managment"
-  );
-
-  const orderFive = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 5 && item.type === "Top Managment"
-  );
-  const orderSix = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 6 && item.type === "Top Managment"
-  );
-  const orderSeven = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 7 && item.type === "Top Managment"
-  );
-  const orderEight = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 8 && item.type === "Top Managment"
-  );
-  const orderNine = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 9 && item.type === "Top Managment"
-  );
-  const orderTen = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 10 && item.type === "Top Managment"
+  const orderTopManagment = managementData?.data?.data?.data?.filter(
+    (item) => item.type === "Top Managment"
   );
 
   //directors
-  const orderDirectorOne = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 1 && item.type === "Director"
+  const orderDirector = managementData?.data?.data?.data?.filter(
+    (item) => item.type === "Director"
   );
-  const orderDirectorTwo = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 2 && item.type === "Director"
-  );
-  const orderDirectorThree = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 3 && item.type === "Director"
-  );
-  const orderDirectorFour = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 4 && item.type === "Director"
-  );
-  const orderDirectorFive = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 5 && item.type === "Director"
-  );
-  const orderDirectorSix = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 6 && item.type === "Director"
-  );
-  const orderDirectorSeven = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 7 && item.type === "Director"
-  );
-  const orderDirectorEight = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 8 && item.type === "Director"
-  );
-  const orderDirectorNine = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 9 && item.type === "Director"
-  );
-  const orderDirectorTen = managementData?.data?.data?.data?.filter(
-    (item) => item.order == 10 && item.type === "Director"
-  );
+
   return (
     <div className="">
       <div
@@ -143,7 +89,7 @@ const ExecutiveManagment = () => {
           position: "relative",
         }}
       >
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 " />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
           <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
             {isAmh ? "አስፈፃሚ አስተዳደር" : "Executive Managment"}
@@ -157,388 +103,41 @@ const ExecutiveManagment = () => {
 
       {/* ORGANIZATIONAL STRUCTURE */}
       <div className=" p-3">
-        <div className="absolute left-0 top-0 bottom-0   z-40  hidden md:flex">
+        <div className="absolute left-0 top-0 h-[87.7%]   z-40  hidden md:flex">
           <img src={bodyone} alt="" className="h-full object-contain  " />
         </div>
 
-        <div className="absolute right-0 top-0  bottom-0  hidden md:flex">
+        <div className="absolute right-0 top-0  h-[87.7%]  hidden md:flex">
           <img src={bodytwo} alt="" className="h-full object-contain  " />
         </div>
 
         <div className="max-w-full mx-[4%]">
           {/* order one MANAGEMENT */}
-          <h1 className="font-bold text-3xl text-gray-700">
+          <h1 className=" text-3xl font-medium  text-[#661F00]">
             {" "}
-            {isAmh ? "ከፍተኛ አስተዳደር" : "Top Managment"}
+            {isAmh ? "ከፍተኛ አስተዳደር" : "Top Management"}
           </h1>
           <div>
-            <div className="max-w-sm md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center  ">
-              {orderOne?.map((item) => (
-                <div className="flex flex-col items-left w-[100%]  justify-center  shadow-2xl">
+            <div className="max-w-sm md:max-w-[100%] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 py-5 items-center justify-center  ">
+              {orderTopManagment?.map((item) => (
+                <div className="flex flex-col items-left w-[100%]  justify-center  shadow-2xl rounded-lg">
                   <img
                     src={item.managment_photo}
                     alt=""
-                    className="h-[400px]  object-cover "
+                    className="h-[300px]  object-cover "
                   />
-                  <h1 className="font-bold text-gray-700 px-4   text-2xl">
+                  <h1 className="font-bold text-gray-700 px-4   text-xl">
                     {isAmh ? item?.name?.amharic : item.name?.english}
                   </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* order two */}
-            <div className="max-w-xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderTwo?.map((item) => (
-                <div className="flex flex-col  items-left  w-[100%] justify-center shadow-2xl">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[400px]  object-cover "
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* three */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderThree?.map((item) => (
-                <div className="flex flex-col items-left w-[100%]  justify-center shadow-2xl">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[400px]  object-cover "
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* four */}
-            <div className="max-w-2xl  md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderFour?.map((item) => (
-                <div className="flex flex-col items-left w-[100%]  justify-center shadow-2xl">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[400px]  object-cover "
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* five */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderFive?.map((item) => (
-                <div className="flex flex-col items-left w-[100%]  justify-center shadow-2xl">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[400px]  object-cover "
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* six */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderSix?.map((item) => (
-                <div className="flex flex-col items-left w-[100%]  justify-center shadow-2xl">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[400px] object-cover "
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* seven */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderSeven?.map((item) => (
-                <div className="flex flex-col items-left w-[100%]  justify-center shadow-2xl">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[400px]  object-cover "
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* eight */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderEight?.map((item) => (
-                <div className="flex flex-col items-left w-[100%]  justify-center shadow-2xl">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[400px]  object-cover "
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* nine */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderNine?.map((item) => (
-                <div className="flex flex-col items-left w-[100%]  justify-center shadow-2xl">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[400px]  object-cover "
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* ten */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderTen?.map((item) => (
-                <div className="flex flex-col items-left w-[100%]  justify-center shadow-2xl">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[400px]  object-cover "
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
+                  <p className="text-blue-400 px-4 pb-4 text-sm">
+                    {isAmh ? item?.role?.amharic : item.role?.english}
                   </p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* directors */}
-          <h1 className="font-bold text-3xl text-gray-700">
-            {" "}
-            {isAmh ? "ዳይሬክተሮች" : "Directors"}
-          </h1>
-          <div>
-            <div className="max-w-sm md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderDirectorOne?.map((item) => (
-                <div className="flex flex-col shadow-2xl w-[100%]  items-left justify-center">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[299px] object-cover"
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* order two */}
-            <div className="max-w-xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderDirectorTwo?.map((item) => (
-                <div className="flex flex-col shadow-2xl w-[100%]  items-left justify-center">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[299px]   object-cover"
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* three */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderDirectorThree?.map((item) => (
-                <div className="flex flex-col shadow-2xl w-[100%]  items-left justify-center">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[299px]  object-cover"
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* four */}
-            <div className="max-w-2xl  md:max-w-[90%]mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderDirectorFour?.map((item) => (
-                <div className="flex flex-col shadow-2xl w-[100%]  items-left justify-center">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[299px]  object-cover"
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* five */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderDirectorFive?.map((item) => (
-                <div className="flex flex-col shadow-2xl w-[100%]  items-left justify-center">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[299px]  object-cover"
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* six */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderDirectorSix?.map((item) => (
-                <div className="flex flex-col shadow-2xl w-[100%]  items-left justify-center">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[299px]  object-cover"
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* seven */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderDirectorSeven?.map((item) => (
-                <div className="flex flex-col shadow-2xl w-[100%]  items-left justify-center">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[299px]  object-cover"
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* eight */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderDirectorEight?.map((item) => (
-                <div className="flex flex-col shadow-2xl w-[100%]  items-left justify-center">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[299px]  object-cover"
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* nine */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderDirectorNine?.map((item) => (
-                <div className="flex flex-col shadow-2xl w-[100%]  items-left justify-center">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-[299px]  object-cover"
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-            {/* ten */}
-            <div className="max-w-2xl md:max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-5 items-center justify-center">
-              {orderDirectorTen?.map((item) => (
-                <div className="flex flex-col shadow-2xl w-[100%]  items-left justify-center">
-                  <img
-                    src={item.managment_photo}
-                    alt=""
-                    className="h-20 w-full object-cover"
-                  />
-                  <h1 className="font-bold text-gray-700 px-4  text-2xl">
-                    {isAmh ? item?.name?.amharic : item.name?.english}
-                  </h1>
-                  <p className="text-blue-400 px-4 text-sm">
-                    Chairperson of BoDs & Human Affairs
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+        
         </div>
       </div>
     </div>

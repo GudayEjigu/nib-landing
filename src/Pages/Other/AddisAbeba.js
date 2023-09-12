@@ -82,26 +82,49 @@ const AddisAbeba = () => {
         {addisAbebaBranchDatas.isFetched ? (
           <div>
             <div className="w-full grid grid-col-1 md:grid-cols-3 gap-3">
-              {addisBranches?.map((item) => (
-                <div className="bg-white p-3 rounded-md shadow-2xl flex flex-col items-center justify-center">
-                  <img src={nibLogo} className="h-20" alt="" />
-                  <h1 className="font-bold text-xl text-gray-800">
-                    {isAmh ? item.name.amharic : item.name.english}
-                  </h1>
-                  <p className="font-medium text-gray-500">
-                    Phone: {item.direct_phone}
-                  </p>
-                  <p className="font-medium text-gray-500">Fax: {item.fax}</p>
-                </div>
+              {addisBranches?.map((item, i) => (
+                <>
+                  {i != 0 && page == 1 ? (
+                    <>
+                      <div className="bg-white p-3 rounded-md shadow-2xl flex flex-col items-center justify-center">
+                        <img src={nibLogo} className="h-20" alt="" />
+                        <h1 className="font-bold text-xl text-gray-800">
+                          {isAmh ? item.name.amharic : item.name.english}
+                        </h1>
+                        <p className="font-medium text-gray-500">
+                          Phone: {item.direct_phone}
+                        </p>
+                        <p className="font-medium text-gray-500">
+                          Fax: {item.fax}
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                        <div className="bg-white p-3 rounded-md shadow-2xl flex flex-col items-center justify-center">
+                        <img src={nibLogo} className="h-20" alt="" />
+                        <h1 className="font-bold text-xl text-gray-800">
+                          {isAmh ? item.name.amharic : item.name.english}
+                        </h1>
+                        <p className="font-medium text-gray-500">
+                          Phone: {item.direct_phone}
+                        </p>
+                        <p className="font-medium text-gray-500">
+                          Fax: {item.fax}
+                        </p>
+                      </div></>
+                  )}
+                </>
               ))}
             </div>
-            <div>
+
+            <div className="my-10">
               <div className="flex items-center justify-center space-x-3 py-3">
                 {addisAbebaBranchDatas?.data?.data?.data?.AddisAbabaBranches
                   ?.prev_page_url !== null && (
                   <button
                     onClick={() => setPage((prev) => prev - 1)}
-                    className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
+                    className="bg-[#FFB300] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                   >
                     Previous
@@ -111,13 +134,39 @@ const AddisAbeba = () => {
                   ?.next_page_url !== null && (
                   <button
                     onClick={() => setPage((prevPage) => prevPage + 1)}
-                    className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
+                    className="bg-[#FFB300] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                   >
                     Next
                   </button>
                 )}
               </div>
+            </div>
+            {page == 1 ? (<p className="text-black font-bold text-2xl">Contact Offices</p>): (null)}
+            <div className="w-full mt-10 grid grid-col-1 md:grid-cols-3 gap-3">
+              {addisBranches?.map((item, i) => (
+                <>
+                  {i == 0 && page == 1 ? (
+                    <>
+                   
+                      <div className="bg-white p-3 rounded-md shadow-2xl flex flex-col items-center justify-center">
+                        <img src={nibLogo} className="h-20" alt="" />
+                        <h1 className="font-bold text-xl text-gray-800">
+                          {isAmh ? item.name.amharic : item.name.english}
+                        </h1>
+                        <p className="font-medium text-gray-500">
+                          Phone: {item.direct_phone}
+                        </p>
+                        <p className="font-medium text-gray-500">
+                          Fax: {item.fax}
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </>
+              ))}
             </div>
           </div>
         ) : (

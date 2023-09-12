@@ -9,6 +9,8 @@ import Moment from "react-moment";
 import BlockContent from "@sanity/block-content-to-react";
 import { useHomeContext } from "../../context/HomeContext";
 import bodyone from "../../assets/LeftFrame.png";
+import life from "../../assets/lifeInsurance.png";
+import nonLife from "../../assets/nonLifeInsurance.png";
 import bodytwo from "../../assets/RightFrame.png";
 import { useLang } from "../../context/lang";
 import axios from "axios";
@@ -42,55 +44,77 @@ const Services = () => {
       onSuccess: (res) => {},
     }
   );
-  console.log(servicesData?.data?.data);
+  console.log(servicesData?.data?.data?.data[0]?.category?.name?.english);
   return (
     <div>
-      <div
-        style={{
-          backgroundImage: `url(${two})`,
-          backgroundPosition: "center",
-          width: "100%",
-          minHeight: "350px",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          position: "relative",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
-          <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
-            {isAmh ? "አገልግሎቶች" : "SERVICES"}
-          </h1>
-          <p className="text-sm font-light text-white">
-            {isAmh ? " ቤት/አገልግሎቶች" : "HOME/SERVICES"}
-          </p>
+      {servicesData?.data?.data?.data[0]?.category?.name?.english ==
+      "Non-Life Insurance" ? (
+        <div
+          style={{
+            backgroundImage: `url(${nonLife})`,
+            backgroundPosition: "center",
+            width: "100%",
+            minHeight: "800px",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            position: "relative",
+          }}
+        >
+          <div className="absolute inset-0 " />
+          <div className="flex flex-col items-left absolute w-full text-left  justify-start z-30 top-1/3 pl-44">
+            <h1 className="text-white text-left font-semiBold text-2xl py-5 md:text-6xl">
+              {isAmh ? "የድርጅት መዋቅር" : "General Insurance (Non-Life)"}
+            </h1>
+            <p className="text-lg font-light text-white w-[40%]">
+              {isAmh
+                ? "ቤት/ስለ እኛ"
+                : "Discover the array of non-life insurance solutions we offer at NIB Insurance. From safeguarding your assets to protecting against unexpected challenges, our suite of services is designed to provide you with the peace of mind you deserve. Explore our comprehensive range of non-life insurance offerings tailored to meet your everyday needs."}
+            </p>
+          </div>
         </div>
-      </div>
+      ) : (
+        <>
+          {" "}
+          <div
+            style={{
+              backgroundImage: `url(${life})`,
+              backgroundPosition: "center",
+              width: "100%",
+              minHeight: "800px",
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              position: "relative",
+            }}
+          >
+            <div className="absolute inset-0 " />
+            <div className="flex flex-col items-left absolute w-full text-left  justify-start z-30 top-1/3 pl-44">
+              <h1 className="text-white text-left font-semiBold text-2xl py-5 md:text-6xl">
+                {isAmh ? "የድርጅት መዋቅር" : "Life and Health Insurance"}
+              </h1>
+              <p className="text-lg font-light text-white w-[40%]">
+                {isAmh
+                  ? "ቤት/ስለ እኛ"
+                  : "Explore our Life and Health Insurance offerings at NIB Insurance, where we prioritize your well-being and financial security. Our range of services is crafted to protect your future, ensuring that you and your loved ones are cared for in times of need. Delve into the details of our life and health insurance solutions, designed to provide you with the assurance and support you deserve."}
+              </p>
+            </div>
+          </div>
+        </>
+      )}
 
       {/*  */}
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 h-full z-40 hidden md:flex">
-          <img
-            src={bodyone}
-            alt=""
-            className="h-full object-contain "
-          />
+          <img src={bodyone} alt="" className="h-full object-contain " />
         </div>
         <div className="absolute right-0 top-0 bottom-0 h-full z-40 hidden md:flex">
-          <img
-            src={bodytwo}
-            alt=""
-            className="h-full object-contain "
-          />
+          <img src={bodytwo} alt="" className="h-full object-contain " />
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-2xl md:text-4xl font-semiBold text-center pt-10">
-            {isAmh ? "የእኛ አገልግሎቶች" : "Our services"}
-          </h1>
+         
           <p></p>
         </div>
         <div className="max-w-6xl mx-auto p-3">
-          <h1 className="font-medium text-xl text-gray-800">
+          <h1 className="font-medium text-xl text-[#661F00]">
             {isAmh
               ? servicesData?.data?.data?.data[0]?.category?.name?.amharic
               : servicesData?.data?.data?.data[0]?.category?.name?.english}
@@ -114,7 +138,7 @@ const Services = () => {
                 </p>
                 <h4
                   onClick={() => navigate(`/services/detail/${item.id}`)}
-                  className="cursor-pointer hover:opacity-70  bottom-0  font-semiBold  text-[#AC7729]"
+                  className="cursor-pointer hover:opacity-70  bottom-0  font-semiBold mt-10 text-[#FFB300]"
                 >
                   {isAmh ? "ተጨማሪ ያንብቡ" : "Learn more"}
                 </h4>

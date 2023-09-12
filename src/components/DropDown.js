@@ -166,18 +166,17 @@ const DropDown = ({ toggle, isOpen, setIsModalOpen, setIsOpen }) => {
                         {isAmh ? "የድርጅት መዋቅር" : "Organization Structure"}{" "}
                       </Link>{" "}
                       <Link
+                        to="/board-of-directors"
+                        className="font-medium  text-slate-900"
+                        onClick={toggle}
+                      >Board of Directors
+                      </Link>
+                      <Link
                         to="/executive_managment"
                         className="font-medium  text-slate-900"
                         onClick={toggle}
                       >
                         {isAmh ? "አስፈፃሚ አስተዳደር" : "Executive Managment"}
-                      </Link>
-                      <Link
-                        to="/branches"
-                        className="font-medium  text-slate-900"
-                        onClick={toggle}
-                      >
-                        List ofBranches
                       </Link>
                       <Link
                         to="/faq"
@@ -198,7 +197,7 @@ const DropDown = ({ toggle, isOpen, setIsModalOpen, setIsOpen }) => {
               onClick={handleShowInsights}
               className="flex items-start justify-center space-x-1 cursor-pointer hover:text-sky-500"
             >
-              <h1 className="font-medium  text-slate-900">Insights</h1>
+              <h1 className="font-medium  text-slate-900">Media</h1>
               {openInsights ? (
                 <BiChevronUp size={25} className="text-slate-900" />
               ) : (
@@ -231,13 +230,26 @@ const DropDown = ({ toggle, isOpen, setIsModalOpen, setIsOpen }) => {
               </div>
             )}
           </div>
-
           <Link
             to="/vacancies"
             className="font-medium  text-slate-900"
             onClick={toggle}
           >
-            Vacancies
+            Claims
+          </Link>
+          <Link
+            to="/branches"
+            className="font-medium  text-slate-900"
+            onClick={toggle}
+          >
+            Branches
+          </Link>
+          <Link
+            to="/vacancies"
+            className="font-medium  text-slate-900"
+            onClick={toggle}
+          >
+            Vacancy
           </Link>
           <Link
             to="/profile"

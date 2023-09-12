@@ -51,26 +51,10 @@ const Faq = () => {
   console.log(faqDataDatas?.data?.data?.data?.data);
   return (
     <div>
-      <div
-        style={{
-          backgroundImage: `url(${two})`,
-          backgroundPosition: "center",
-          width: "100%",
-          minHeight: "350px",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          position: "relative",
-        }}
+      <div 
+    
       >
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
-          <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
-            {isAmh ? "የሚጠየቁ ጥያቄዎች" : "FAQs"}
-          </h1>
-          <p className="text-sm font-light text-white">
-            {isAmh ? "ቤት/ተደጋጋሚ ጥያቄዎች" : "HOME/About"}
-          </p>
-        </div>
+    
       </div>
       {/* faqs */}
       <div className="relative">
@@ -94,7 +78,7 @@ const Faq = () => {
           </div>
          
         </div> */}
-        <div className="w-full max-w-6xl mx-auto py-10  p-3 md:py-20">
+        <div className="w-full max-w-6xl mx-auto py-10  md:py-10  shadow-2xl ">
           <h1 className="text-gray-700 text-center font-semiBold text-2xl py-5 md:text-4xl">
             {isAmh ? "የሚጠየቁ ጥያቄዎች" : "FAQs"}
           </h1>
@@ -106,13 +90,11 @@ const Faq = () => {
                     <AccordionItem>
                       <AccordionItemHeading>
                         <AccordionItemButton>
-                          
-                            {parse(
-                              isAmh
-                                ? item.question.amharic
-                                : item.question.english.slice(3))
-                            }
-                          
+                          {parse(
+                            isAmh
+                              ? item.question.amharic
+                              : item.question.english.slice(3)
+                          )}
                         </AccordionItemButton>
                       </AccordionItemHeading>
                       <AccordionItemPanel>
@@ -130,7 +112,7 @@ const Faq = () => {
                 {faqDataDatas?.data?.data?.data?.prev_page_url !== null && (
                   <button
                     onClick={() => setPage((prev) => prev - 1)}
-                    className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
+                    className="bg-[#FFB300] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                   >
                     Previous
@@ -139,7 +121,7 @@ const Faq = () => {
                 {faqDataDatas?.data?.data?.data?.next_page_url !== null && (
                   <button
                     onClick={() => setPage((prev) => prev + 1)}
-                    className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
+                    className="bg-[#FFB300] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                   >
                     Next

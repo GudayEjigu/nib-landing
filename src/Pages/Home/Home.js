@@ -7,6 +7,8 @@ import Blog from "./components/Blog";
 import Why from "./components/Why";
 import Contact from './components/Contact'
 import Insurances from "./components/Insurances";
+import Dashboard from "./components/Dashboard";
+import Faq from "../Other/Faq";
 const Home = () => {
   return (
     <>
@@ -14,9 +16,11 @@ const Home = () => {
      <Banner />
       {/* <Client /> */}
       <About />
+      <Dashboard/>
       <Services />
       <Blog />
       <Insurances />
+      <Faq/>
       <Why />
       <Contact />
     </>

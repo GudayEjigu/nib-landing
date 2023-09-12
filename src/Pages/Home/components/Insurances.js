@@ -65,7 +65,7 @@ const Insurances = () => {
     <div className="flex flex-col items-center justify-center">
       {/* OUR RE-INSURERS */}
       <div className="w-full">
-        <h1 className="text-[#AC7729] text-center font-semiBold text-2xl py-5 md:text-4xl">
+        <h1 className="text-[#661F00] text-center font-semiBold text-2xl py-5 md:text-4xl">
           {isAmh ? "የእኛ ድጋሚ ኢንሹራንስ" : "OUR RE-INSURERS"}
         </h1>
         {brockersData.isFetched ? (
@@ -134,7 +134,7 @@ const Insurances = () => {
       </div>
       {/* insurances */}
       <div>
-        <h1 className="text-[#AC7729] text-center font-semiBold text-2xl pt-10 md:text-4xl">
+        <h1 className="text-[#661F00] text-center font-semiBold text-2xl pt-10 md:text-4xl">
           {isAmh ? "የእኛ የመድን ዋስትና ደላላዎች" : "OUR REINSURANCE BROKERS"}
         </h1>
         {brockersData.isFetched ? (

@@ -11,24 +11,25 @@ const Contact = () => {
           backgroundImage: `url(${contacts})`,
           backgroundPosition: "center",
           width: "100%",
-          minHeight: "550px",
+          minHeight: "50px",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className=" md:p-5"
+        className=" md:p-0"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 p-3 gap-3">
-          <div className="flex items-start space-y-1 flex-col">
-            <h1 className="text-2xl md:text-3xl font-semiBold">
-             {isAmh ?   'ለማንኛውም ጥያቄ መልእክቱን ይላኩለን' :' DROP US MESSAGE FOR ANY QUERY'}
+        <div className="grid grid-cols-1 md:grid-cols-2 p-0 gap-0">
+          <div className="flex items-start space-y-1 flex-col p-5">
+            <h1 className="text-2xl md:text-xl font-medium text-[#661F00]">
+             {isAmh ?   'ለማንኛውም ጥያቄ መልእክቱን ይላኩለን' :'Contact us'}
             </h1>
+            <div className="w-10 bg-[#FFB300] h-[2px]" />
          
             <form className="flex flex-col space-y-2 flex-grow w-full ">
               <input
                 type="text"
                 name="name"
                 id=""
-                placeholder={isAmh ? 'ስም' :"your name"}
+                placeholder={isAmh ? 'ስም' :"Full Name"}
                 className="p-2 border  flex-grow rounded-sm"
                 required
               />
@@ -36,7 +37,7 @@ const Contact = () => {
                 type="email"
                 name="email"
                 id=""
-                placeholder={isAmh ? "ኢሜይል":"your email"}
+                placeholder={isAmh ? "ኢሜይል":"Email Address"}
                 className="p-2 border  flex-grow rounded-sm"
                 required
               />
@@ -44,7 +45,7 @@ const Contact = () => {
                 type="number"
                 name="phone"
                 id=""
-                placeholder={isAmh ? "ስልክ ቁጥር" : "your phone"}
+                placeholder={isAmh ? "ስልክ ቁጥር" : "Phone Number"}
                 className="p-2 border  flex-grow rounded-sm"
                 required
               />
@@ -54,15 +55,18 @@ const Contact = () => {
                 id=""
                 cols="30"
                 rows="4"
-                placeholder={isAmh ? "መልእክትህ" :"Your Message"}
+                placeholder={isAmh ? "መልእክትህ" :"Message"}
                 required
               ></textarea>
+              <div className="flex justify-center">
+
               <button
                 type="submit"
-                className="p-2 w-24 px-4 bg-[#ffd137] text-white rounded-md font-medium"
-              >
+                className="p-2 w-32   bg-[#FFB300] text-white rounded-md font-medium"
+                >
                 {isAmh ? 'ላክ' :'Send'}
               </button>
+                </div>
             </form>
           </div>
           <div className='flex items-center justify-center '>

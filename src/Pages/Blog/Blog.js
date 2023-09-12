@@ -75,7 +75,7 @@ const Blog = () => {
           position: "relative",
         }}
       >
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 " />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
           <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
             {isAmh ? "ብሎጎች" : "Blogs"}
@@ -103,7 +103,7 @@ const Blog = () => {
         {blogCategoryData.isFetched && (
           <div className="max-w-6xl mx-auto p-3">
             <div className="flex flex-col items-start space-y-2 pt-5">
-              <h1 className="font-medium">
+              <h1 className="font-medium  text-[#661F00]">
                 {isAmh ? "በምድብ አጣራ" : "Filter By Category"}
               </h1>
               <select
@@ -159,7 +159,7 @@ const Blog = () => {
               {blogData?.data?.data?.data?.prev_page_url !== null && (
                 <button
                   onClick={() => setPage((prev) => prev - 1)}
-                  className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
+                  className="bg-[#FFB300] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                 >
                   Previous
@@ -168,7 +168,7 @@ const Blog = () => {
               {blogData?.data?.data?.data?.next_page_url !== null && (
                 <button
                   onClick={() => setPage((prevPage) => prevPage + 1)}
-                  className="bg-[#FDB913] p-2 px-5 text-white rounded-sm 
+                  className="bg-[#FFB300] p-2 px-5 text-white rounded-sm 
             font-medium w-fit"
                 >
                   Next

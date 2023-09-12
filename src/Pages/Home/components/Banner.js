@@ -14,7 +14,7 @@ const Banner = () => {
   const navigate = useNavigate();
   return (
     <div className="relative ">
-   {/*    <div className="absolute left-0 top-0 bottom-0 h-full z-10">
+      {/*    <div className="absolute left-0 top-0 bottom-0 h-full z-10">
         <img
           src={bodyone}
           alt=""
@@ -57,10 +57,8 @@ const Banner = () => {
       <div className="absolute z-30 top-1/4 flex flex-col items-start w-full">
         <div className="max-w-6xl mx-auto w-full flex flex-col space-y-2 p-3 md:p-0">
           <div className="flex items-center space-x-2">
-            <div className="h-6 w-[2px]  bg-[#ac7729] " />
-            <p className="text-white">
-              {isAmh ? "የእርስዎ ብልህ ምርጫ!" : "Your Intelligent Choice!"}
-            </p>
+
+          
           </div>
           <h1 className="text-2xl md:text-5xl font-semiBold max-w-2xl text-white">
             {isAmh
@@ -74,13 +72,12 @@ const Banner = () => {
           </p>
           <button
             onClick={() => navigate("/contact")}
-            className="bg-[#FDB913] p-2 px-5 text-white rounded-sm font-medium w-fit"
+            className="bg-[#FFB300] p-2 px-5 text-white rounded-sm font-medium w-fit"
           >
             {isAmh ? "አግኙን" : "Contact us"}
           </button>
         </div>
       </div>
-
     </div>
   );
 };

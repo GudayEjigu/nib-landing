@@ -71,14 +71,14 @@ const Client = () => {
               <div className="bg-white shadow-2xl rounded-lg p-5">
                 <div className="py-2">
                   <h1 className="font-bold text-xl ">CREATE ACCOUNT</h1>
-                  <div className="w-10 bg-[#FDB913] h-[2px]" />
+                  <div className="w-10 bg-[#FFB300] h-[2px]" />
                 </div>
                 <p className="text-sm"> </p>
               </div>
               <div className="bg-white shadow-2xl rounded-lg p-5">
                 <div className="py-2">
                   <h1 className="font-bold text-xl ">By signing up</h1>
-                  <div className="w-10 bg-[#FDB913] h-[2px]" />
+                  <div className="w-10 bg-[#FFB300] h-[2px]" />
                 </div>
                 <p className="text-sm"></p>
               </div>
@@ -87,7 +87,7 @@ const Client = () => {
                   <h1 className="font-bold text-xl ">
                     {isAmh ? "እሴቶች" : "Our Values"}
                   </h1>
-                  <div className="w-10 bg-[#FDB913] h-[2px]" />
+                  <div className="w-10 bg-[#FFB300] h-[2px]" />
                 </div>
                 <p className="text-sm"></p>
               </div>

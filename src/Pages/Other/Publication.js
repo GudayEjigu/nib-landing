@@ -84,7 +84,7 @@ const Publication = () => {
           position: "relative",
         }}
       >
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 " />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
           <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
             {isAmh ? "ህትመት" : "Publication"}
@@ -99,7 +99,7 @@ const Publication = () => {
         {publicationCategoryDataDatas.isFetched && (
           <div className="max-w-6xl mx-auto p-3">
             <div className="flex flex-col items-start space-y-2 pt-5">
-              <h1 className="font-medium">
+              <h1 className="font-medium  text-[#661F00]">
                 {isAmh ? "በምድብ አጣራ" : "Filter By Category"}
               </h1>
               <div className="max-w-6xl mx-auto w-full flex items-center space-x-2 overflow-x-scroll ">
@@ -139,7 +139,7 @@ const Publication = () => {
          
         </div> */}
         <div className="w-full max-w-6xl mx-auto py-10  p-3 md:py-20">
-          <h1 className="text-gray-700 text-center font-semiBold text-2xl py-5 md:text-4xl">
+          <h1 className=" text-center font-medium  text-[#661F00] text-2xl py-5 md:text-4xl">
             {isAmh ? "ህትመት" : "Publication"}
           </h1>
 

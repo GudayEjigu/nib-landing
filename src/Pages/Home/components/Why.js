@@ -24,7 +24,7 @@ const Why = () => {
           }}
         >
           <div className="p-5 flex flex-col items-start space-y-2">
-            <p className="text-[#FDB913]">
+            <p className="text-[#FFB300]">
               {isAmh ? "የእርስዎ ጥቅሞች" : "Your Benefits"}
             </p>
             <h1 className="text-white font-semiBold text-xl md:text-3xl">

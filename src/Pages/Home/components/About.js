@@ -60,11 +60,11 @@ const About = () => {
       <div className="absolute right-0 top-0 bottom-0 h-full z-40 hidden md:flex opacity-20">
         <img src={bodytwo} alt="" className="h-full object-contain" />
       </div>
-      <h1 className="font-semiBold text-4xl text-center pb-10">
-        {isAmh ? "ስለ እኛ" : "About Us"}
-      </h1>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-2">
+      <h1 className="font-medium text-2xl text-left ml-32 mb-6 text-[#FFB300] font-medium ">
+        {isAmh ? "የወደፊት ዕጣህን ከእኛ ጋር አስጠብቅ።" : "Secure your future with us!"}
+      </h1>
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="relative   flex-col items-start justify-start w-full">
           <img
             src={two}
@@ -78,11 +78,12 @@ const About = () => {
           />
         </div>
         <div className="flex flex-col space-y-2 pt-12 lg:pt-0">
-          <h1 className="text-[#FDB913] font-semiBold text-4xl">
-            {isAmh ? "የወደፊት ዕጣህን ከእኛ ጋር አስጠብቅ።" : "SECURE YOUR FUTURE WITH US."}
+          <h1 className="text-[#661F00] font-medium text-2xl">
+            {isAmh ? "ስለ እኛ" : "About Us"}
           </h1>
+          <div className="w-10 bg-[#FFB300] h-[2px]" />
 
-          <h4 className="text-[#000] font-semiBold text-2xl">
+          <h4 className="text-[#000] font-medium text-2xl">
             {isAmh ? "መመስረት" : "Establishment"}
           </h4>
 
@@ -93,7 +94,7 @@ const About = () => {
                 : aboutDatas?.data?.data?.data?.establishment?.english
             )}
           </p>
-          {/* <button className="bg-[#FDB913] p-2 px-5 text-white rounded-sm font-medium w-fit">
+          {/* <button className="bg-[#FFB300] p-2 px-5 text-white rounded-sm font-medium w-fit">
             read more
           </button> */}
         </div>
@@ -105,10 +106,10 @@ const About = () => {
           <div className="bg-white  rounded-lg p-5">
             <div className="py-2">
               <img src={target} />
-              <h1 className="font-semiBold text-xl pt-2 ">
+              <h1 className="font-medium text-xl pt-2 text-[#661F00]">
                 {isAmh ? "ተልዕኮ" : "Our Mission"}
               </h1>
-              <div className="w-10 bg-[#FDB913] h-[2px]" />
+              <div className="w-10 bg-[#FFB300] h-[2px]" />
             </div>
             <p className="text-sm text-justify">
               {ReactHtmlParser(
@@ -121,10 +122,10 @@ const About = () => {
           <div className="bg-white  rounded-lg p-5">
             <div className="py-2">
               <img src={magnify} />
-              <h1 className="font-semiBold text-xl  pt-2">
+              <h1 className="font-medium text-xl  pt-2 text-[#661F00]">
                 {isAmh ? "ራዕይ" : "Our Vision"}
               </h1>
-              <div className="w-10 bg-[#FDB913] h-[2px]" />
+              <div className="w-10 bg-[#FFB300] h-[2px]" />
             </div>
             <p className="text-sm text-justify">
               {ReactHtmlParser(
@@ -137,12 +138,14 @@ const About = () => {
         </div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 bg-white  rounded-lg p-5">
-          <div className="py-2">
-            <img src={handHeart} />
-            <h1 className="font-semiBold text-xl pt-2 ">
-              {isAmh ? "እሴቶች" : "Our Values"}
-            </h1>
-            <div className="w-10 bg-[#FDB913] h-[2px]" />
+          <div className="pb-8 flex justify-center">
+            <div className="flex flex-col items-center">
+              <img className="w-12  " src={handHeart} />
+              <h1 className="font-medium text-xl pt-2 text-[#661F00] ">
+                {isAmh ? "እሴቶች" : "Our Values"}
+              </h1>
+              <div className="w-10 bg-[#FFB300] h-[2px]" />
+            </div>
           </div>
           <p className="text-sm   grid lg:grid-cols-2 lg:gap-12">
             <div className="flex ">

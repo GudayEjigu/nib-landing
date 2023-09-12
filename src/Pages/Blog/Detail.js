@@ -55,7 +55,7 @@ const Detail = () => {
           position: "relative",
         }}
       >
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 " />
         <div className="flex flex-col items-center absolute w-full text-center justify-center z-30 top-1/2">
           <h1 className="text-white text-center font-semiBold text-2xl py-5 md:text-4xl">
             {isAmh ? "የብሎግ ዝርዝር" : "BLOG DETAIL"}
@@ -119,7 +119,7 @@ const Detail = () => {
               placeholder="search"
               className="flex flex-grow bg-transparent focus:outline-none focus:ring-0 w-full"
             />
-            <button className="flex-grow flex bg-[#FDB913] p-2 md:px-5 text-white rounded-sm font-medium">
+            <button className="flex-grow flex bg-[#FFB300] p-2 md:px-5 text-white rounded-sm font-medium">
               <FaSearch className="text-[#AC7729]" />
             </button>
           </div> */}
@@ -129,7 +129,7 @@ const Detail = () => {
               <h1 className="font-semiBold text-xl capitalize pb-1">
                 {isAmh ? "ተዛማጅ ብሎጎች" : "Related Blogs"}
               </h1>
-              <div className="w-10 bg-[#FDB913] h-[2px]" />
+              <div className="w-10 bg-[#FFB300] h-[2px]" />
             </div>
             <div>
               <div className="flexflex-col items-start space-y-2">

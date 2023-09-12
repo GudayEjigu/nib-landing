@@ -42,7 +42,7 @@ const Services = () => {
         <img src={bodytwo} alt="" className="h-full object-contain" />
       </div>
       <div className="flex  flex-col items-center justify-center space-y-1">
-        <h1 className="font-semiBold text-4xl text-center ">
+        <h1 className="font-medium text-4xl text-center text-[#661F00]">
           {isAmh ? "የእኛ አገልግሎቶች" : "Our Services"}
         </h1>
         <p className="text-sm text-center">
@@ -54,23 +54,23 @@ const Services = () => {
 
       <div className="max-w-6xl mx-auto">
         <div className=" flex -items-center justify-between pt-3 m-2 ">
-          <h3 className="text-xl md:text-2xl font-semiBold text-black px-3 sm:px-0">
+          <h3 className="text-xl md:text-2xl font-medium  px-3 sm:px-0 text-[#661F00]">
             {isAmh ? "የሕይወት ያልሆነ ኢንሹራንስ" : "Non-Life Insurance"}
           </h3>
 
           {serviceData.isFetched && (
-            <div className="flex items-center hover:opacity-70">
+            <div className="flex items-center hover:opacity-70 ">
               <h6
                 onClick={() =>
                   navigate(
                     `/services/${serviceData?.data?.data?.data?.nonLifeInsurance[0]?.category?.id}`
                   )
                 }
-                className="  font-semibold cursor-pointer text-[#ac7729]"
+                className="  font-medium cursor-pointer text-[#FFB300]"
               >
                 {isAmh ? "ሁሉንም አስስ" : "Browse All"}
               </h6>
-              <BiChevronRight size={25} className="text-[#ac7729]" />
+              <BiChevronRight size={25} className="text-[#FFB300]" />
             </div>
           )}
         </div>
@@ -84,7 +84,7 @@ const Services = () => {
                   className="bg-white relative p-3 z-40 rounded-lg  shadow-2xl flex flex-col items-center justify-center"
                 >
                   <img src={item.service_photo} alt="" className="h-36" />
-                  <h1 className="text-xl font-semiBold text-center text-black ">
+                  <h1 className="text-xl font-medium text-center text-black ">
                     {isAmh ? item.title?.amharic : item.title?.english}
                   </h1>
                   <p className=" text-sm   text-center h-20 overflow-hidden ">
@@ -92,7 +92,7 @@ const Services = () => {
                   </p>
                   <h4
                     onClick={() => navigate(`/services/detail/${item.id}`)}
-                    className="cursor-pointer hover:opacity-70   my-5 font-semiBold  text-[#AC7729] pt-5"
+                    className="cursor-pointer hover:opacity-70   my-5 font-medium  text-[#FFB300] pt-5"
                   >
                     {isAmh ? "ተጨማሪ ያንብቡ" : "Learn more"}
                   </h4>
@@ -119,7 +119,7 @@ const Services = () => {
       {/* life insurance */}
       <div className="max-w-6xl mx-auto pt-5">
         <div className=" flex -items-center justify-between pt-3 m-2 ">
-          <h3 className="text-xl md:text-2xl font-semiBold text-black px-3 sm:px-0">
+          <h3 className="text-xl md:text-2xl font-medium text-[#661F00] px-3 sm:px-0">
             {isAmh ? "የሕይወት ኢንሹራንስ" : "Life Insurance"}
           </h3>
 
@@ -131,11 +131,11 @@ const Services = () => {
                     `/services/${serviceData?.data?.data?.data?.lifeInsurance[0]?.category?.id}`
                   )
                 }
-                className="  font-semibold cursor-pointer text-[#ac7729]"
+                className="  font-medium cursor-pointer text-[#FFB300]"
               >
                 {isAmh ? "ሁሉንም አስስ" : "Browse All"}
               </h6>
-              <BiChevronRight size={25} className="text-[#ac7729]" />
+              <BiChevronRight size={25} className="text-[#FFB300]" />
             </div>
           )}
         </div>
@@ -148,7 +148,7 @@ const Services = () => {
                   className="bg-white relative p-3 z-40 rounded-lg shadow-2xl flex flex-col items-center justify-center"
                 >
                   <img src={item.service_photo} alt="" className="h-36" />
-                  <h1 className="text-xl font-semiBold text-black ">
+                  <h1 className="text-xl font-medium text-black ">
                     {isAmh ? item.title?.amharic : item.title?.english}
                   </h1>
                   <p className="text-sm text-center max-h-12 overflow-hidden pb-14">
@@ -156,7 +156,7 @@ const Services = () => {
                   </p>
                   <h4
                     onClick={() => navigate(`/services/detail/${item.id}`)}
-                    className="cursor-pointer hover:opacity-70  my-5 font-semiBold  text-[#AC7729] pt-5"
+                    className="cursor-pointer hover:opacity-70  my-5 font-medium  text-[#FFB300] pt-5"
                   >
                     {isAmh ? "ተጨማሪ ያንብቡ" : "Learn more"}
                   </h4>
